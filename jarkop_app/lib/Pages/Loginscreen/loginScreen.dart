@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/Loginscreen/login.dart';
 
 import '../RegisterScreen/register.dart';
 
@@ -26,11 +27,6 @@ class _loginScreenState extends State<loginScreen> {
           child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
-                Container(
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.all(10),
-                  margin: const EdgeInsets.all(10),
-                ),
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child:
@@ -48,7 +44,9 @@ class _loginScreenState extends State<loginScreen> {
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.to(loginpage());
+                      },
                       child: Text(
                         "MASUK",
                         style: TextStyle(
@@ -70,7 +68,7 @@ class _loginScreenState extends State<loginScreen> {
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                       onPressed: () {
-                        Get.to(Register());
+                        Get.to(Registerpage());
                       },
                       child: Text(
                         "DAFTAR",
