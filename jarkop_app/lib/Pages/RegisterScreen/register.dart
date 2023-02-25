@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/Homescreen/home.dart';
+import 'package:jarkop_app/Pages/Homescreen/navipage.dart';
 
 class Registerpage extends StatefulWidget {
   const Registerpage({super.key});
@@ -88,7 +91,9 @@ class _RegisterpageState extends State<Registerpage> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15)),
                     child: TextButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        Get.to(Dashboard());
+                      }),
                       child: Text(
                         "DAFTAR",
                         style: TextStyle(

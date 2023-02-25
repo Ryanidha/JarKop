@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/Homescreen/navipage.dart';
 import 'package:jarkop_app/Pages/Splashscreen/splashScreen.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: splashScreen(),
+      home: SplashScreen(),
+      // home: Navipage(),
     );
   }
 }
