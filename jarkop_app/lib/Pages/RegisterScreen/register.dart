@@ -36,7 +36,7 @@ class _RegisterpageState extends State<Registerpage> {
           .createUserWithEmailAndPassword(
               email: _emailController.text.toString().trim(),
               password: _passwordController.text)
-          .then((value) => Get.to(() => Dashboard()));
+          .then((value) => Get.to(() => Navipage()));
 
       addUserDetails(
         _nameController.text.trim(),

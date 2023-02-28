@@ -25,7 +25,7 @@ class _NavipageState extends State<Navipage> {
     Text("Home"),
     Text("History"),
     Text("Store"),
-    Text("Acconut")
+    Text("Account")
   ];
 
   void _onItemTapped(int index) {
@@ -38,9 +38,8 @@ class _NavipageState extends State<Navipage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xffEACDA2),
-        title: _atPages.elementAt(_selectedIndex)
-      ),
+          backgroundColor: Color(0xffEACDA2),
+          title: _atPages.elementAt(_selectedIndex)),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -51,20 +50,22 @@ class _NavipageState extends State<Navipage> {
             label: 'Home',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
+            icon: Icon(Icons.history_edu),
             label: 'Business',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.store_mall_directory_rounded),
+            label: 'Manage',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
+            icon: Icon(Icons.account_circle_rounded),
             label: 'School',
           ),
         ],
+        backgroundColor: Color(0xffEACDA2),
         currentIndex: _selectedIndex,
-        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
         onTap: _onItemTapped,
       ),
     );

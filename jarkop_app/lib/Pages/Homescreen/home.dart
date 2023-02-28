@@ -15,33 +15,65 @@ class _DashboardState extends State<Dashboard> {
     // final sw = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xffF5ECE3),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
+      body: Center(
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(
               height: 23,
             ),
             Container(
-              // width: sw,
               height: 72,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10),
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
+              child: ListTile(
+                leading: Icon(
+                  Icons.wallet,
+                  color: Colors.black,
+                ),
+                title: Text(
+                  "Balance",
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 14,
+                      color: Colors.black),
+                ),
+                subtitle: Text(
+                  "Rp 1.000.000",
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.black),
+                ),
               ),
             ),
             SizedBox(
               height: 23,
             ),
             Container(
-              height: 53,
-              // width: sw,
-              decoration: BoxDecoration(color: Colors.red),
+              height: 60,
+              decoration: BoxDecoration(
+                color: Colors.red,
+              ),
+              child: ListTile(
+                leading: Icon(
+                  Icons.warning,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "You Have 2 Orders Left",
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
+                ),
+              ),
             ),
-            ListView(
-              
-            )
+            Container(
+              height: 152,
+              decoration: BoxDecoration(color: Colors.white),
+            ),
           ],
         ),
       ),

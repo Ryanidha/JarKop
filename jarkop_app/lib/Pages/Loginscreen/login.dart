@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/Homescreen/home.dart';
 
 import '../navipage.dart';
 
@@ -25,7 +26,7 @@ class _loginpageState extends State<loginpage> {
       await _firebaseAuth
           .signInWithEmailAndPassword(
               email: _emailController.text, password: _passwordController.text)
-          .then((value) => Get.to(Navipage()));
+          .then((value) => Get.to(() => Navipage()));
     } catch (e) {
       print(e);
       SnackBar(content: Text(e.toString()));
@@ -112,6 +113,7 @@ class _loginpageState extends State<loginpage> {
                     child: TextButton(
                       onPressed: (() {
                         loginSubmit();
+                        
                       }),
                       child: Text(
                         "MASUK",

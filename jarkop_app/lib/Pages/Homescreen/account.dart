@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
@@ -14,12 +15,17 @@ class _accountPageState extends State<accountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            child: Text("Halo"),
+          SizedBox(
+            height: 20,
           )
+          Container(
+              child: ListTile(
+            leading: Icon(
+              Icons.account_circle,
+              size: 90,
+            ),
+          ))
         ],
       ),
     );
