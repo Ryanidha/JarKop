@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jarkop_app/Pages/Homescreen/navipage.dart';
+import 'package:jarkop_app/Pages/navipage.dart';
 import 'package:jarkop_app/Pages/Splashscreen/splashScreen.dart';
 
 void main() {

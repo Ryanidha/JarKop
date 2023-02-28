@@ -24,17 +24,30 @@ class _DashboardState extends State<Dashboard> {
       ),
       backgroundColor: Color(0xffF5ECE3),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           SizedBox(
-            height: 12,
+            height: 23,
           ),
           Container(
             width: sw,
             height: 72,
-            color: Colors.white,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+            ),
           ),
+          SizedBox(
+            height: 23,
+          ),
+          Container(
+            height: 53,
+            width: sw,
+            decoration: BoxDecoration(color: Colors.red),
+          ),
+          ListView(
+            
+          )
         ],
       ),
     );

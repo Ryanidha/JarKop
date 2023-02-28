@@ -1,6 +1,10 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+
+import '../navipage.dart';
 
 class loginpage extends StatefulWidget {
   const loginpage({super.key});
@@ -10,6 +14,24 @@ class loginpage extends StatefulWidget {
 }
 
 class _loginpageState extends State<loginpage> {
+  var _passwordVisible = false;
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+
+  loginSubmit() async {
+    try {
+      await _firebaseAuth
+          .signInWithEmailAndPassword(
+              email: _emailController.text, password: _passwordController.text)
+          .then((value) => Get.to(Navipage()));
+    } catch (e) {
+      print(e);
+      SnackBar(content: Text(e.toString()));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final sw = MediaQuery.of(context).size.width;
@@ -32,8 +54,9 @@ class _loginpageState extends State<loginpage> {
                   Container(
                     width: sw,
                     child: TextField(
+                      controller: _emailController,
                       decoration: new InputDecoration(
-                        hintText: 'No.HP',
+                        hintText: 'Email',
                         hintStyle: new TextStyle(
                             color: Colors.white,
                             fontFamily: 'Inter',
@@ -48,7 +71,9 @@ class _loginpageState extends State<loginpage> {
                   Container(
                     width: sw,
                     child: TextField(
-                      decoration: new InputDecoration(
+                      controller: _passwordController,
+                      obscureText: !_passwordVisible,
+                      decoration: InputDecoration(
                         hintText: 'Password',
                         hintStyle: new TextStyle(
                             color: Colors.white,
@@ -57,6 +82,19 @@ class _loginpageState extends State<loginpage> {
                             fontWeight: FontWeight.bold),
                         enabledBorder: UnderlineInputBorder(
                           borderSide: BorderSide(color: Colors.white, width: 3),
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _passwordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Theme.of(context).primaryColorDark,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _passwordVisible = !_passwordVisible;
+                            });
+                          },
                         ),
                       ),
                     ),
@@ -72,7 +110,9 @@ class _loginpageState extends State<loginpage> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(15)),
                     child: TextButton(
-                      onPressed: (() {}),
+                      onPressed: (() {
+                        loginSubmit();
+                      }),
                       child: Text(
                         "MASUK",
                         style: TextStyle(

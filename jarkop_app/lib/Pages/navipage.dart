@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jarkop_app/Pages/Homescreen/account.dart';
+import 'package:jarkop_app/Pages/Homescreen/home.dart';
 import 'package:scroll_bottom_navigation_bar/scroll_bottom_navigation_bar.dart';
 
 class Navipage extends StatefulWidget {
@@ -13,10 +15,10 @@ class _NavipageState extends State<Navipage> {
   int _selectedIndex = 0;
 
   List _widgetOptions = [
-    Text("Home"),
+    Dashboard(),
     Text("History"),
     Text("Shop"),
-    Text("Accou nt")
+    accountPage()
   ];
 
   void _onItemTapped(int index) {

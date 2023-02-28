@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/navipage.dart';
 import 'package:jarkop_app/Pages/Loginscreen/login.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 import '../RegisterScreen/register.dart';
 
 class loginScreen extends StatefulWidget {
@@ -16,6 +17,9 @@ class loginScreen extends StatefulWidget {
 }
 
 class _loginScreenState extends State<loginScreen> {
+  
+  
+  
   @override
   Widget build(BuildContext context) {
     final sw = MediaQuery.of(context).size.width;
