@@ -32,11 +32,13 @@ class _RegisterpageState extends State<Registerpage> {
 
   registerSubmit() async {
     try {
-      await _firebaseAuth.createUserWithEmailAndPassword(
-          email: _emailController.text.toString().trim(),
-          password: _passwordController.text);
+      await _firebaseAuth
+          .createUserWithEmailAndPassword(
+              email: _emailController.text.toString().trim(),
+              password: _passwordController.text)
+          .then((value) => Get.to(() => Dashboard()));
 
-  addUserDetails(
+      addUserDetails(
         _nameController.text.trim(),
         int.parse(_phoneController.text.trim()),
         _emailController.text.trim(),
@@ -137,7 +139,7 @@ class _RegisterpageState extends State<Registerpage> {
                         borderRadius: BorderRadius.circular(15)),
                     child: TextButton(
                       onPressed: (() {
-                        Get.to(Navipage());
+                        registerSubmit();
                       }),
                       child: Text(
                         "DAFTAR",

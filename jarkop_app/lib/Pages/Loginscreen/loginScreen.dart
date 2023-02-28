@@ -17,9 +17,6 @@ class loginScreen extends StatefulWidget {
 }
 
 class _loginScreenState extends State<loginScreen> {
-  
-  
-  
   @override
   Widget build(BuildContext context) {
     final sw = MediaQuery.of(context).size.width;
@@ -72,7 +69,7 @@ class _loginScreenState extends State<loginScreen> {
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                       onPressed: () {
-                        Get.to(Registerpage());
+                        Get.to(() => Registerpage());
                       },
                       child: Text(
                         "DAFTAR",

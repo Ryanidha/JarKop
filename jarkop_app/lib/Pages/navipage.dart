@@ -21,6 +21,13 @@ class _NavipageState extends State<Navipage> {
     accountPage()
   ];
 
+  List _atPages = [
+    Text("Home"),
+    Text("History"),
+    Text("Store"),
+    Text("Acconut")
+  ];
+
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -30,10 +37,14 @@ class _NavipageState extends State<Navipage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xffEACDA2),
+        title: _atPages.elementAt(_selectedIndex)
+      ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
-      bottomNavigationBar:BottomNavigationBar(
+      bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
