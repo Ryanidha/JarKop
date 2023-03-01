@@ -31,7 +31,7 @@ class _SplashScreenState extends State<SplashScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
-              'assets/jarkop.png',
+              'assets/icon.png',
               width: sw,
               height: sh,
             )

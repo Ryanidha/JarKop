@@ -14,18 +14,21 @@ class _accountPageState extends State<accountPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
+      backgroundColor: Colors.white,
+      body: ListView(
         children: [
-          SizedBox(
-            height: 20,
-          )
+          const SizedBox(
+            height: 40,
+          ),
           Container(
-              child: ListTile(
-            leading: Icon(
-              Icons.account_circle,
-              size: 90,
-            ),
-          ))
+              color: Colors.white,
+              child: const ListTile(
+                leading: Icon(
+                  Icons.account_circle,
+                  size: 90,
+                ),
+                title: Text('Kang Dagang'),
+              ))
         ],
       ),
     );

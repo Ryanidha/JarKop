@@ -22,11 +22,36 @@ class _NavipageState extends State<Navipage> {
   ];
 
   List _atPages = [
-    Text("Home"),
-    Text("History"),
-    Text("Store"),
-    Text("Account")
+    Text(
+      "Home",
+      style: TextStyle(
+        color: Colors.black,
+        fontFamily: 'Noto Sans'
+      ),
+      ),
+    Text(
+      "History",
+      style: TextStyle(
+        color: Colors.black,
+        fontFamily: 'Noto Sans'
+      ),
+    ),
+    Text(
+      "Store",
+      style: TextStyle(
+        color: Colors.black,
+        fontFamily: 'Noto Sans'
+      ),
+      ),
+    Text(
+      "Account",
+      style: TextStyle(
+        color: Colors.black,
+        fontFamily: 'Noto Sans'
+      ),
+      )
   ];
+
 
   void _onItemTapped(int index) {
     setState(() {
@@ -38,7 +63,7 @@ class _NavipageState extends State<Navipage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Color(0xffEACDA2),
+          backgroundColor: Colors.white,
           title: _atPages.elementAt(_selectedIndex)),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
@@ -51,7 +76,7 @@ class _NavipageState extends State<Navipage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.history_edu),
-            label: 'Business',
+            label: 'History',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.store_mall_directory_rounded),
@@ -59,7 +84,7 @@ class _NavipageState extends State<Navipage> {
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.account_circle_rounded),
-            label: 'School',
+            label: 'Account',
           ),
         ],
         backgroundColor: Color(0xffEACDA2),

@@ -15,13 +15,12 @@ class _DashboardState extends State<Dashboard> {
     // final sw = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xffF5ECE3),
-      body: Center(
-        child: Column(
-          children: [
-            SizedBox(
-              height: 23,
-            ),
-            Container(
+      body: ListView(
+        children: [
+          SizedBox(
+            height: 23,
+          ),
+          Container(
               height: 72,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -70,13 +69,8 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
             ),
-            Container(
-              height: 152,
-              decoration: BoxDecoration(color: Colors.white),
-            ),
-          ],
-        ),
-      ),
+        ],
+      )
     );
   }
 }

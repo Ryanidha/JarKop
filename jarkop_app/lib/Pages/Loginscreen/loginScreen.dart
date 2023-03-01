@@ -33,7 +33,15 @@ class _loginScreenState extends State<loginScreen> {
                   child:
                       Image.asset("assets/logo.png", width: 250, height: 210),
                 ),
-                SizedBox(
+                Container(
+                    child: Text(
+                  'Merchant',
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 24,
+                      color: Colors.black),
+                )),
+                const SizedBox(
                   height: 30,
                 ),
                 Container(
@@ -41,23 +49,23 @@ class _loginScreenState extends State<loginScreen> {
                   width: sw,
                   margin: EdgeInsets.only(left: 51, right: 50),
                   decoration: BoxDecoration(
-                      color: Color(0xffeacda2),
+                      color: Colors.white,
                       border: Border.all(color: Colors.white),
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                       onPressed: () {
                         Get.to(loginpage());
                       },
-                      child: Text(
+                      child: const Text(
                         "MASUK",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Colors.white,
+                            color: Colors.black,
                             fontFamily: 'Inter'),
                       )),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 31,
                 ),
                 Container(
@@ -71,12 +79,12 @@ class _loginScreenState extends State<loginScreen> {
                       onPressed: () {
                         Get.to(() => Registerpage());
                       },
-                      child: Text(
+                      child: const Text(
                         "DAFTAR",
                         style: TextStyle(
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
-                            color: Color(0xffeacda2),
+                            color: Colors.black,
                             fontFamily: 'Inter'),
                       )),
                 )

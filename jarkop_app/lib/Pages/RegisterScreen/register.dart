@@ -36,7 +36,7 @@ class _RegisterpageState extends State<Registerpage> {
           .createUserWithEmailAndPassword(
               email: _emailController.text.toString().trim(),
               password: _passwordController.text)
-          .then((value) => Get.to(() => Navipage()));
+          .then((value) => Get.offAll(() => Navipage()));
 
       addUserDetails(
         _nameController.text.trim(),
@@ -73,6 +73,14 @@ class _RegisterpageState extends State<Registerpage> {
                     child:
                         Image.asset("assets/logo.png", width: sw, height: 100),
                   ),
+                  Container(
+                    child: Text(
+                  'Merchant',
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 24,
+                      color: Colors.black),
+                )),
                   SizedBox(
                     height: 20,
                   ),
