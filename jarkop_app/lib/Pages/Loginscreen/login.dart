@@ -14,6 +14,7 @@ class loginpage extends StatefulWidget {
   State<loginpage> createState() => _loginpageState();
 }
 
+// ignore: camel_case_types
 class _loginpageState extends State<loginpage> {
   var _passwordVisible = false;
   final TextEditingController _emailController = TextEditingController();
@@ -60,31 +61,35 @@ class _loginpageState extends State<loginpage> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Container(
+                 Container(
                     width: sw,
+                    padding: const EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
                       controller: _emailController,
-                      decoration: new InputDecoration(
-                          labelText: "Email",
-                          labelStyle: TextStyle(fontFamily: 'Noto Sans'),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                      decoration: const InputDecoration(
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(color: Colors.grey),
+                          labelText: "Email"),
                     ),
                   ),
-                  SizedBox(height: 20,),
-                  Container(
+                  const SizedBox(height: 20,),
+                   Container(
                     width: sw,
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
                       controller: _passwordController,
                       obscureText: !_passwordVisible,
-                      decoration: InputDecoration(
-                        labelText: 'Password',
-                        labelStyle: new TextStyle(
-                            fontFamily: 'Noto Sans',
-                        ),
-                        border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10)),
-                        suffixIcon: IconButton(
+                      decoration: new InputDecoration(
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(color: Colors.grey),
+                          labelText: "Password",
+                          suffixIcon: IconButton(
                           icon: Icon(
                             _passwordVisible
                                 ? Icons.visibility

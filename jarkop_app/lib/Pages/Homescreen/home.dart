@@ -14,13 +14,13 @@ class _DashboardState extends State<Dashboard> {
   Widget build(BuildContext context) {
     // final sw = MediaQuery.of(context).size.width;
     return Scaffold(
-      backgroundColor: Color(0xffF5ECE3),
-      body: ListView(
-        children: [
-          SizedBox(
-            height: 23,
-          ),
-          Container(
+        backgroundColor: Color(0xffF5ECE3),
+        body: ListView(
+          children: [
+            SizedBox(
+              height: 23,
+            ),
+            Container(
               height: 72,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
@@ -51,26 +51,141 @@ class _DashboardState extends State<Dashboard> {
             ),
             Container(
               height: 60,
+              padding: EdgeInsets.only(left: 70),
               decoration: BoxDecoration(
                 color: Colors.red,
               ),
-              child: ListTile(
-                leading: Icon(
-                  Icons.warning,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  "You Have 2 Orders Left",
-                  style: TextStyle(
-                      fontFamily: 'Noto Sans',
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white),
-                ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.warning,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "You Have 2 Orders Left",
+                    style: TextStyle(
+                        fontFamily: 'Noto Sans',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ],
               ),
             ),
-        ],
-      )
-    );
+            Container(
+              height: 150,
+              color: Colors.white,
+              child: ListView(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 19, left: 20),
+                    child: Text(
+                      "1x Cappucino",
+                      style: TextStyle(
+                          fontFamily: 'Noto Sans',
+                          fontSize: 18,
+                          color: Colors.black),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 19, left: 20),
+                    child: Text(
+                      "1x Cappucino",
+                      style: TextStyle(
+                          fontFamily: 'Noto Sans',
+                          fontSize: 18,
+                          color: Colors.black),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 54,
+                    color: Color(0xffFFD18D),
+                    child: TextButton(
+                      onPressed: (() {}),
+                      child: Text(
+                        "Confirm Delivery",
+                        style: TextStyle(
+                            fontFamily: 'Noto Sans',
+                            fontSize: 18,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            SizedBox(height: 10,),
+            Container(
+              height: 60,
+              padding: EdgeInsets.only(left: 70),
+              decoration: BoxDecoration(
+                color: Colors.red,
+              ),
+              child: Row(
+                children: [
+                  Icon(
+                    Icons.warning,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "You Have 2 Orders Left",
+                    style: TextStyle(
+                        fontFamily: 'Noto Sans',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+            Container(
+              height: 150,
+              color: Colors.white,
+              child: ListView(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 19, left: 20),
+                    child: Text(
+                      "1x Cappucino",
+                      style: TextStyle(
+                          fontFamily: 'Noto Sans',
+                          fontSize: 18,
+                          color: Colors.black),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 19, left: 20),
+                    child: Text(
+                      "1x Cappucino",
+                      style: TextStyle(
+                          fontFamily: 'Noto Sans',
+                          fontSize: 18,
+                          color: Colors.black),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 54,
+                    color: Color(0xffFFD18D),
+                    child: TextButton(
+                      onPressed: (() {}),
+                      child: Text(
+                        "Confirm Delivery",
+                        style: TextStyle(
+                            fontFamily: 'Noto Sans',
+                            fontSize: 18,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
+            
+          ],
+        ));
   }
 }

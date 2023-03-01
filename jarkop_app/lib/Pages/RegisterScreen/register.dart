@@ -85,38 +85,62 @@ class _RegisterpageState extends State<Registerpage> {
                   ),
                   Container(
                     width: sw,
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
                       controller: _phoneController,
                       decoration: new InputDecoration(
-                          labelText: "No.HP",
-                          labelStyle: TextStyle(fontFamily: 'Noto Sans'),
-                          fillColor: Colors.white,
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(color: Colors.grey),
+                          labelText: "No.HP"),
                     ),
                   ),
                   SizedBox(height: 20),
                   Container(
                     width: sw,
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
                       controller: _emailController,
                       decoration: new InputDecoration(
-                          labelText: "Email",
-                          labelStyle: TextStyle(fontFamily: 'Noto Sans'),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))),
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(color: Colors.grey),
+                          labelText: "Email"),
                     ),
                   ),
-                  SizedBox(height: 20,),
+                  SizedBox(
+                    height: 20,
+                  ),
                   Container(
                     width: sw,
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
                       controller: _passwordController,
+                      obscureText: !_passwordVisible,
                       decoration: new InputDecoration(
+                        border: InputBorder.none,
+                        labelStyle: TextStyle(color: Colors.grey),
                         labelText: "Password",
-                        labelStyle: TextStyle(fontFamily: 'Noto Sans'),
-                          border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(10))
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            _passwordVisible
+                                ? Icons.visibility
+                                : Icons.visibility_off,
+                            color: Theme.of(context).primaryColorDark,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              _passwordVisible = !_passwordVisible;
+                            });
+                          },
+                        ),
                       ),
                     ),
                   ),
