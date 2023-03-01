@@ -21,19 +21,17 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final sw = MediaQuery.of(context).size.width;
-    final sh = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffffd18d),
-      body: Container(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Image.asset(
               'assets/icon.png',
-              width: sw,
-              height: sh,
+              width: 258.66,
+              height: 258.66,
             )
           ],
         ),

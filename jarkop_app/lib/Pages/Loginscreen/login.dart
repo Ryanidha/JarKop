@@ -50,48 +50,40 @@ class _loginpageState extends State<loginpage> {
                         Image.asset("assets/logo.png", width: sw, height: 100),
                   ),
                   Container(
-                    child: Text(
+                    child: const Text(
                   'Merchant',
                   style: TextStyle(
                       fontFamily: 'Noto Sans',
                       fontSize: 24,
                       color: Colors.black),
                 )),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   Container(
                     width: sw,
-                    child: TextField(
+                    child: TextFormField(
                       controller: _emailController,
                       decoration: new InputDecoration(
-                        hintText: 'Email',
-                        hintStyle: new TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Inter',
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 3),
-                        ),
-                      ),
+                          labelText: "Email",
+                          labelStyle: TextStyle(fontFamily: 'Noto Sans'),
+                          border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10))),
                     ),
                   ),
+                  SizedBox(height: 20,),
                   Container(
                     width: sw,
-                    child: TextField(
+                    child: TextFormField(
                       controller: _passwordController,
                       obscureText: !_passwordVisible,
                       decoration: InputDecoration(
-                        hintText: 'Password',
-                        hintStyle: new TextStyle(
-                            color: Colors.white,
-                            fontFamily: 'Inter',
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold),
-                        enabledBorder: UnderlineInputBorder(
-                          borderSide: BorderSide(color: Colors.white, width: 3),
+                        labelText: 'Password',
+                        labelStyle: new TextStyle(
+                            fontFamily: 'Noto Sans',
                         ),
+                        border: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(10)),
                         suffixIcon: IconButton(
                           icon: Icon(
                             _passwordVisible

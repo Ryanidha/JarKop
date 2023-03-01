@@ -34,7 +34,7 @@ class _loginScreenState extends State<loginScreen> {
                       Image.asset("assets/logo.png", width: 250, height: 210),
                 ),
                 Container(
-                    child: Text(
+                    child: const Text(
                   'Merchant',
                   style: TextStyle(
                       fontFamily: 'Noto Sans',
