@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/Loginscreen/loginScreen.dart';
 
 class accountPage extends StatefulWidget {
   const accountPage({super.key});
@@ -11,6 +13,10 @@ class accountPage extends StatefulWidget {
 }
 
 class _accountPageState extends State<accountPage> {
+  merchantDetail(context) {
+    Get.offAll(loginScreen());
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +31,26 @@ class _accountPageState extends State<accountPage> {
               child: const ListTile(
                 leading: Icon(
                   Icons.account_circle,
-                  size: 90,
+                  size: 70,
                 ),
-                title: Text('Kang Dagang'),
-              ))
+                title: Text(
+                  'Kang Dagang',
+                  style: TextStyle(
+                      fontSize: 24,
+                      fontFamily: 'Noto Sans',
+                      fontWeight: FontWeight.bold),
+                ),
+                subtitle: Text(
+                  '+62 1234567890\ne-mail@mail.com',
+                  style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
+                ),
+                // trailing: IconButton(
+                //     onPressed: () {
+                //       merchantDetail(context);
+                //     },
+                //     icon: Icon(Icons.edit)),
+                isThreeLine: true,
+              )),
         ],
       ),
     );

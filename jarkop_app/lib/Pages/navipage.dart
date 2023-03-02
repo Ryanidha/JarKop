@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:jarkop_app/Pages/Homescreen/account.dart';
+import 'package:jarkop_app/Pages/Homescreen/history.dart';
 import 'package:jarkop_app/Pages/Homescreen/home.dart';
 import 'package:scroll_bottom_navigation_bar/scroll_bottom_navigation_bar.dart';
 
@@ -16,7 +17,7 @@ class _NavipageState extends State<Navipage> {
 
   List _widgetOptions = [
     Dashboard(),
-    Text("History"),
+    historyPage(),
     Text("Shop"),
     accountPage()
   ];
@@ -24,34 +25,21 @@ class _NavipageState extends State<Navipage> {
   List _atPages = [
     Text(
       "Home",
-      style: TextStyle(
-        color: Colors.black,
-        fontFamily: 'Noto Sans'
-      ),
-      ),
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
+    ),
     Text(
       "History",
-      style: TextStyle(
-        color: Colors.black,
-        fontFamily: 'Noto Sans'
-      ),
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
     ),
     Text(
       "Store",
-      style: TextStyle(
-        color: Colors.black,
-        fontFamily: 'Noto Sans'
-      ),
-      ),
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
+    ),
     Text(
       "Account",
-      style: TextStyle(
-        color: Colors.black,
-        fontFamily: 'Noto Sans'
-      ),
-      )
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
+    )
   ];
-
 
   void _onItemTapped(int index) {
     setState(() {
