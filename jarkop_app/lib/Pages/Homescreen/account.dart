@@ -28,13 +28,13 @@ class _accountPageState extends State<accountPage> {
           ),
           Container(
               color: Colors.white,
-              child: const ListTile(
+              child: ListTile(
                 leading: Icon(
                   Icons.account_circle,
                   size: 70,
                 ),
                 title: Text(
-                  'Kang Dagang',
+                  '',
                   style: TextStyle(
                       fontSize: 24,
                       fontFamily: 'Noto Sans',
@@ -44,13 +44,123 @@ class _accountPageState extends State<accountPage> {
                   '+62 1234567890\ne-mail@mail.com',
                   style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
                 ),
-                // trailing: IconButton(
-                //     onPressed: () {
-                //       merchantDetail(context);
-                //     },
-                //     icon: Icon(Icons.edit)),
+                trailing: IconButton(
+                    onPressed: () {
+                      merchantDetail(context);
+                    },
+                    icon: Icon(Icons.edit)),
                 isThreeLine: true,
               )),
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 18, top: 10),
+                child: Text(
+                  "Account",
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+           Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                padding: EdgeInsets.only(left: 18, top: 10),
+                child: Text(
+                  "General",
+                  style: TextStyle(
+                      fontFamily: 'Noto Sans',
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              )
+            ],
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rewards",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
         ],
       ),
     );
