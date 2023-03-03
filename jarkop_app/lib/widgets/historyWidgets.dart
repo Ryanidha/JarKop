@@ -27,7 +27,10 @@ class CustomListItem extends StatelessWidget {
           ),
           Text(
             harga,
-            style: TextStyle(fontFamily: 'Noto Sans', fontSize: 15,fontWeight: FontWeight.bold),
+            style: TextStyle(
+                fontFamily: 'Noto Sans',
+                fontSize: 15,
+                fontWeight: FontWeight.bold),
           ),
         ],
       ),

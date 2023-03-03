@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:jarkop_app/Pages/Homescreen/account.dart';
 import 'package:jarkop_app/Pages/Homescreen/history.dart';
 import 'package:jarkop_app/Pages/Homescreen/home.dart';
+import 'package:jarkop_app/Pages/Homescreen/manage.dart';
 import 'package:scroll_bottom_navigation_bar/scroll_bottom_navigation_bar.dart';
 
 class Navipage extends StatefulWidget {
@@ -18,7 +19,7 @@ class _NavipageState extends State<Navipage> {
   List _widgetOptions = [
     Dashboard(),
     historyPage(),
-    Text("Shop"),
+    StorePage(),
     accountPage()
   ];
 

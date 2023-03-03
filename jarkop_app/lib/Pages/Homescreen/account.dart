@@ -16,7 +16,6 @@ class accountPage extends StatefulWidget {
 class _accountPageState extends State<accountPage> {
   final user = FirebaseAuth.instance.currentUser;
 
-
   Splitter() {
     List<String> nama = (user!.email.toString().split('@'));
     String username = nama[0];
@@ -25,8 +24,8 @@ class _accountPageState extends State<accountPage> {
   }
 
   _signOut() async {
-    await FirebaseAuth.instance.signOut().
-    then((value) => Navigator.of(context).pushReplacement(
+    await FirebaseAuth.instance.signOut().then((value) => Navigator.of(context)
+        .pushReplacement(
             MaterialPageRoute(builder: (context) => loginScreen())));
   }
 
@@ -36,6 +35,7 @@ class _accountPageState extends State<accountPage> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
@@ -58,7 +58,7 @@ class _accountPageState extends State<accountPage> {
                       fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  '+62 1234567890\n($user+@mail.com)',
+                  '+62 1234567890\n${Splitter()}@mail.com',
                   style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
                 ),
                 trailing: IconButton(
@@ -105,7 +105,7 @@ class _accountPageState extends State<accountPage> {
           ),
           ListTile(
             title: Text(
-              "Notificatio",
+              "Notification",
               style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
             ),
             trailing: IconButton(
@@ -178,32 +178,29 @@ class _accountPageState extends State<accountPage> {
               icon: Icon(Icons.arrow_forward_ios),
             ),
           ),
-          SizedBox(
-            height: 20
-            ),
+          SizedBox(height: 20),
           Container(
-              height: 40,
-              width: double.infinity,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                border: Border.all(color: Colors.black),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: TextButton(
-                onPressed: () {
-                  _signOut();
-                },
-                child: const Text(
-                  "Logout",
-                  style: TextStyle(
+            height: 50,
+            width: 20,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(color: Colors.black),
+              borderRadius: BorderRadius.circular(10),
+            ),
+            child: TextButton(
+              onPressed: () {
+                _signOut();
+              },
+              child: const Text(
+                "Logout",
+                style: TextStyle(
                     fontSize: 20,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Noto Sans'
-                  ),
-                ),
+                    fontFamily: 'Noto Sans'),
               ),
             ),
+          ),
         ],
       ),
     );
