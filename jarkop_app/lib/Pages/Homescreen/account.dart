@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -13,6 +14,22 @@ class accountPage extends StatefulWidget {
 }
 
 class _accountPageState extends State<accountPage> {
+  final user = FirebaseAuth.instance.currentUser;
+
+
+  Splitter() {
+    List<String> nama = (user!.email.toString().split('@'));
+    String username = nama[0];
+
+    return username;
+  }
+
+  _signOut() async {
+    await FirebaseAuth.instance.signOut().
+    then((value) => Navigator.of(context).pushReplacement(
+            MaterialPageRoute(builder: (context) => loginScreen())));
+  }
+
   merchantDetail(context) {
     Get.offAll(loginScreen());
   }
@@ -34,14 +51,14 @@ class _accountPageState extends State<accountPage> {
                   size: 70,
                 ),
                 title: Text(
-                  '',
+                  'Kang dagang',
                   style: TextStyle(
                       fontSize: 24,
                       fontFamily: 'Noto Sans',
                       fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  '+62 1234567890\ne-mail@mail.com',
+                  '+62 1234567890\n($user+@mail.com)',
                   style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
                 ),
                 trailing: IconButton(
@@ -78,7 +95,7 @@ class _accountPageState extends State<accountPage> {
           ),
           ListTile(
             title: Text(
-              "Rewards",
+              "Business Profile",
               style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
             ),
             trailing: IconButton(
@@ -88,7 +105,7 @@ class _accountPageState extends State<accountPage> {
           ),
           ListTile(
             title: Text(
-              "Rewards",
+              "Notificatio",
               style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
             ),
             trailing: IconButton(
@@ -98,7 +115,7 @@ class _accountPageState extends State<accountPage> {
           ),
           ListTile(
             title: Text(
-              "Rewards",
+              "Settings",
               style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
             ),
             trailing: IconButton(
@@ -106,11 +123,11 @@ class _accountPageState extends State<accountPage> {
               icon: Icon(Icons.arrow_forward_ios),
             ),
           ),
-           Row(
+          Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                padding: EdgeInsets.only(left: 18, top: 10),
+                padding: EdgeInsets.only(left: 18, top: 20),
                 child: Text(
                   "General",
                   style: TextStyle(
@@ -123,7 +140,27 @@ class _accountPageState extends State<accountPage> {
           ),
           ListTile(
             title: Text(
-              "Rewards",
+              "Help Center",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Feedback",
+              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+            ),
+            trailing: IconButton(
+              onPressed: (() {}),
+              icon: Icon(Icons.arrow_forward_ios),
+            ),
+          ),
+          ListTile(
+            title: Text(
+              "Rating",
               style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
             ),
             trailing: IconButton(
@@ -141,26 +178,32 @@ class _accountPageState extends State<accountPage> {
               icon: Icon(Icons.arrow_forward_ios),
             ),
           ),
-          ListTile(
-            title: Text(
-              "Rewards",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+          SizedBox(
+            height: 20
             ),
-            trailing: IconButton(
-              onPressed: (() {}),
-              icon: Icon(Icons.arrow_forward_ios),
+          Container(
+              height: 40,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(color: Colors.black),
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: TextButton(
+                onPressed: () {
+                  _signOut();
+                },
+                child: const Text(
+                  "Logout",
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Noto Sans'
+                  ),
+                ),
+              ),
             ),
-          ),
-          ListTile(
-            title: Text(
-              "Rewards",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
-            ),
-            trailing: IconButton(
-              onPressed: (() {}),
-              icon: Icon(Icons.arrow_forward_ios),
-            ),
-          ),
         ],
       ),
     );
