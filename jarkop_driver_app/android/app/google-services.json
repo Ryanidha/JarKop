@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "220916834223",
+    "project_id": "jarkop-5f954",
+    "storage_bucket": "jarkop-5f954.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220916834223:android:1a15730150bdff1585995a",
+        "android_client_info": {
+          "package_name": "com.example.jarkop_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220916834223-26mnlhqhfo2fohcap6a1tv67ri7dbj9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaHvPkGmb6nT29KF7UVtfPHRaiJkCO1tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220916834223-26mnlhqhfo2fohcap6a1tv67ri7dbj9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:220916834223:android:124d096ec8c6176d85995a",
+        "android_client_info": {
+          "package_name": "com.example.jarkop_driver_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "220916834223-26mnlhqhfo2fohcap6a1tv67ri7dbj9q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaHvPkGmb6nT29KF7UVtfPHRaiJkCO1tc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "220916834223-26mnlhqhfo2fohcap6a1tv67ri7dbj9q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
