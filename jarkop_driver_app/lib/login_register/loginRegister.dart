@@ -31,7 +31,7 @@ class _loginRegisterState extends State<loginRegister> {
                 Padding(
                   padding: const EdgeInsets.all(8.0),
                   child:
-                      Image.asset("images/main.png", width: 250, height: 210),
+                      Image.asset("images/logo.png", width: 250, height: 210),
                 ),
                 Container(
                     child: const Text(

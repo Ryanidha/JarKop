@@ -17,14 +17,14 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Color(0xffF5ECE3),
         body: ListView(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 23,
             ),
             Container(
               height: 72,
               decoration: BoxDecoration(
                   color: Colors.white, borderRadius: BorderRadius.circular(10)),
-              child: ListTile(
+              child: const ListTile(
                 leading: Icon(
                   Icons.wallet,
                   color: Colors.black,
@@ -46,17 +46,17 @@ class _DashboardState extends State<Dashboard> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 23,
             ),
             Container(
               height: 60,
               padding: EdgeInsets.only(left: 70),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.red,
               ),
               child: Row(
-                children: [
+                children: const [
                   Icon(
                     Icons.warning,
                     color: Colors.white,
@@ -79,7 +79,7 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 19, left: 20),
-                    child: Text(
+                    child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
                           fontFamily: 'Noto Sans',
@@ -89,7 +89,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 19, left: 20),
-                    child: Text(
+                    child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
                           fontFamily: 'Noto Sans',
@@ -103,7 +103,7 @@ class _DashboardState extends State<Dashboard> {
                     color: Color(0xffFFD18D),
                     child: TextButton(
                       onPressed: (() {}),
-                      child: Text(
+                      child: const Text(
                         "Confirm Delivery",
                         style: TextStyle(
                             fontFamily: 'Noto Sans',
@@ -120,11 +120,11 @@ class _DashboardState extends State<Dashboard> {
             Container(
               height: 60,
               padding: EdgeInsets.only(left: 70),
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.red,
               ),
               child: Row(
-                children: [
+                children: const [
                   Icon(
                     Icons.warning,
                     color: Colors.white,
@@ -147,7 +147,7 @@ class _DashboardState extends State<Dashboard> {
                 children: [
                   Container(
                     padding: EdgeInsets.only(top: 19, left: 20),
-                    child: Text(
+                    child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
                           fontFamily: 'Noto Sans',
@@ -157,7 +157,7 @@ class _DashboardState extends State<Dashboard> {
                   ),
                   Container(
                     padding: EdgeInsets.only(top: 19, left: 20),
-                    child: Text(
+                    child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
                           fontFamily: 'Noto Sans',

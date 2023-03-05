@@ -6,7 +6,6 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_driver_app/naviPage/naviPage.dart';
 
-
 class Registerpage extends StatefulWidget {
   const Registerpage({super.key});
 
@@ -71,7 +70,7 @@ class _RegisterpageState extends State<Registerpage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child:
-                        Image.asset("images/mainlogo.png", width: sw, height: 152),
+                        Image.asset("images/logo.png", width: sw, height: 152),
                   ),
                   const Text(
                     'Driver',

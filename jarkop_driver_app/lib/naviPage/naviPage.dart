@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:jarkop_driver_app/home/account.dart';
+import 'package:jarkop_driver_app/home/history.dart';
+
+import 'package:scroll_bottom_navigation_bar/scroll_bottom_navigation_bar.dart';
+
+import '../home/dashboard.dart';
 
 class Navipage extends StatefulWidget {
   const Navipage({super.key});
@@ -10,11 +16,65 @@ class Navipage extends StatefulWidget {
 }
 
 class _NavipageState extends State<Navipage> {
+  final controller = ScrollController();
+  int _selectedIndex = 0;
+
+  List _widgetOptions = [
+    Dashboard(),
+    History(),
+    accountPage()
+  ];
+
+  List _atPages = [
+    Text(
+      "Home",
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
+    ),
+    Text(
+      "History",
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
+    ),
+    Text(
+      "Account",
+      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
+    )
+  ];
+
+  void _onItemTapped(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          backgroundColor: Colors.white,
+          title: _atPages.elementAt(_selectedIndex)),
       body: Center(
-        child: Text("Halo"),
+        child: _widgetOptions.elementAt(_selectedIndex),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: const <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history_edu),
+            label: 'History',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.account_circle_rounded),
+            label: 'Account',
+          ),
+        ],
+        backgroundColor: Colors.white,
+        currentIndex: _selectedIndex,
+        unselectedItemColor: Colors.grey,
+        selectedItemColor: Colors.black,
+        onTap: _onItemTapped,
       ),
     );
   }

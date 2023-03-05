@@ -49,7 +49,7 @@ class _loginpageState extends State<loginpage> {
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child:
-                        Image.asset("images/mainlogo.png", width: sw, height: 100),
+                        Image.asset("images/logo.png", width: sw, height: 100),
                   ),
                   Container(
                     child: const Text(
