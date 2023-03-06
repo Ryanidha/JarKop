@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_driver_app/login_register/user_register.dart';
 import 'package:jarkop_driver_app/naviPage/naviPage.dart';
 
 class Registerpage extends StatefulWidget {
@@ -35,7 +36,7 @@ class _RegisterpageState extends State<Registerpage> {
           .createUserWithEmailAndPassword(
               email: _emailController.text.toString().trim(),
               password: _passwordController.text)
-          .then((value) => Get.offAll(() => Navipage()));
+          .then((value) => Get.off(() => userRegister()));
 
       addUserDetails(
         _nameController.text.trim(),

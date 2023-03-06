@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_driver_app/login_register/user_register.dart';
 import 'package:jarkop_driver_app/naviPage/naviPage.dart';
 import 'package:jarkop_driver_app/splashScreen/splashScreen.dart';
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: SplashScreen()
-      home: Navipage(),
+      home: userRegister(),
+      // home: Navipage(),
     );
   }
 }
