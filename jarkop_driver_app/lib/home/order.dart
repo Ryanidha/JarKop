@@ -26,33 +26,47 @@ class _OrderPageState extends State<OrderPage> {
                   color: Color(0xffEACDA2)
                 ),
                 child: Row(
-                  
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                  Icon(Icons.store),
+                  Container(
+                      child: Row(
+                        children: [
+                          Icon(Icons.store,size: 20,),
                   TextButton(
                     onPressed: (){}, 
                     child: Text(
                       "Pick up",
                       style: TextStyle(
                         fontFamily: 'Noto Sans',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black
                       ),
                     )
                     ),
-                    Spacer(),
-                    Icon(Icons.store),
+                        ],
+                      ),
+                    ),
+                    Container(
+                      child: Row(
+                        children: [
+                          Icon(Icons.location_on,size: 20,),
                   TextButton(
                     onPressed: (){}, 
                     child: Text(
-                      "Pick up",
+                      "Drop Off",
                       style: TextStyle(
                         fontFamily: 'Noto Sans',
-                        fontSize: 16,
-                        fontWeight: FontWeight.bold
+                        fontSize: 18,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.black
                       ),
                     )
                     ),
+                        ],
+                      ),
+                    )
+                    
                   ]),
               )
             ],

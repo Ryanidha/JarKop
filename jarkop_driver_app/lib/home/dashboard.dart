@@ -246,7 +246,7 @@ class _DashboardState extends State<Dashboard> {
                           color: Color(0xffFFD18D),
                           child: TextButton(
                               onPressed: (() {
-                                Get.off(OrderPage());
+                                Get.off(()=>OrderPage());
                               }),
                               child: const Text(
                                 "Accept Order",

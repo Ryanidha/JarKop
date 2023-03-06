@@ -1,17 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:jarkop_driver_app/widgets/historyWidget.dart';
 
-class History extends StatefulWidget {
-  const History({super.key});
+class historyPage extends StatefulWidget {
+  const historyPage({super.key});
 
   @override
-  State<History> createState() => _HistoryState();
+  State<historyPage> createState() => _historyPageState();
 }
 
-class _HistoryState extends State<History> {
+class _historyPageState extends State<historyPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(backgroundColor: Color(0xffF5ECE3), body: orderHistory());
   }
 }

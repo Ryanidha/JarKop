@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:jarkop_driver_app/home/account.dart';
 import 'package:jarkop_driver_app/home/history.dart';
 
+
 import 'package:scroll_bottom_navigation_bar/scroll_bottom_navigation_bar.dart';
 
 import '../home/dashboard.dart';
@@ -21,7 +22,7 @@ class _NavipageState extends State<Navipage> {
 
   List _widgetOptions = [
     Dashboard(),
-    History(),
+    historyPage(),
     accountPage()
   ];
 

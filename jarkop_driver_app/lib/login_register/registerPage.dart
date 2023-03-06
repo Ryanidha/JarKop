@@ -38,24 +38,24 @@ class _RegisterpageState extends State<Registerpage> {
               password: _passwordController.text)
           .then((value) => Get.off(() => userRegister()));
 
-      addUserDetails(
-        _nameController.text.trim(),
-        int.parse(_phoneController.text.trim()),
-        _emailController.text.trim(),
-      );
+      // addUserDetails(
+      //   _nameController.text.trim(),
+      //   int.parse(_phoneController.text.trim()),
+      //   _emailController.text.trim(),
+      // );
     } catch (e) {
       print(e);
       SnackBar(content: Text(e.toString()));
     }
   }
 
-  Future addUserDetails(String Nama, int Phone, String Email) async {
-    await FirebaseFirestore.instance.collection('users').add({
-      'Nama': Nama,
-      'Phone': Phone,
-      'Email': Email,
-    });
-  }
+  // Future addUserDetails(String Nama, int Phone, String Email) async {
+  //   await FirebaseFirestore.instance.collection('users').add({
+  //     'Nama': Nama,
+  //     'Phone': Phone,
+  //     'Email': Email,
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

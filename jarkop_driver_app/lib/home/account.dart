@@ -52,19 +52,19 @@ class _accountPageState extends State<accountPage> {
                   size: 70,
                 ),
                 title: Text(
-                  'Kang dagang',
+                  'John Doe',
                   style: TextStyle(
                       fontSize: 24,
                       fontFamily: 'Noto Sans',
                       fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  '+62 1234567890\n${Splitter()}@mail.com',
+                  '+62 1234567890\nAB 1238 CC',
                   style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
                 ),
                 trailing: IconButton(
                     onPressed: () {
-                      merchantDetail(context);
+                      // merchantDetail(context);
                     },
                     icon: Icon(Icons.edit)),
                 isThreeLine: true,

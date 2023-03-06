@@ -37,6 +37,7 @@ dependencies:
     sdk: flutter
   flutter_switch: ^0.3.2
   get: ^4.6.5
+  image_picker: ^0.8.6+4
   scroll_bottom_navigation_bar: ^4.0.0
 
 dev_dependencies:
