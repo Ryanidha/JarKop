@@ -158,7 +158,7 @@ class _RegisterpageState extends State<Registerpage> {
                       onPressed: (() {
                         registerSubmit();
                       }),
-                      child: Text(
+                      child: const Text(
                         "DAFTAR",
                         style: TextStyle(
                             fontFamily: 'Inter',

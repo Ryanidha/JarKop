@@ -30,6 +30,11 @@ class _userRegisterState extends State<userRegister> {
         child: SingleChildScrollView(
           child: Column(
             children: [
+               Image.asset(
+              'images/icon.png',
+              width: 100,
+              height: 100,
+            ),
               Container(
                 width: sw * 0.8,
                 padding: const EdgeInsets.only(left: 10),
