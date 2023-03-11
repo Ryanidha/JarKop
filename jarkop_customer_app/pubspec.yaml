@@ -31,11 +31,12 @@ environment:
 dependencies:
   cloud_firestore: ^4.4.3
   cupertino_icons: ^1.0.2
-  firebase_auth: ^4.2.9
-  firebase_core: ^2.7.0
+  firebase_auth: ^4.2.10
+  firebase_core: ^2.7.1
   flutter:
     sdk: flutter
   get: ^4.6.5
+  google_fonts: ^4.0.3
   scroll_bottom_navigation_bar: ^4.0.0
 
 dev_dependencies:

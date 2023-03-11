@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:jarkop_customer_app/pages/LoginRegister/loginPage.dart';
+import 'package:jarkop_customer_app/pages/LoginRegister/registerPage.dart';
 
 class LoginRegister extends StatefulWidget {
   const LoginRegister({super.key});
@@ -49,7 +51,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                       onPressed: () {
-                        // Get.to(loginpage());
+                        Get.to(loginpage());
                       },
                       child: const Text(
                         "MASUK",
@@ -72,7 +74,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                       borderRadius: BorderRadius.circular(15)),
                   child: TextButton(
                       onPressed: () {
-                        // Get.to(() => Registerpage());
+                        Get.to(() => Registerpage());
                       },
                       child: const Text(
                         "DAFTAR",
