@@ -1,6 +1,7 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_customer_app/pages/NavigatorPage/naviPage.dart';
 import 'package:jarkop_customer_app/pages/SplashScreen/splashScreen.dart';
 
 
@@ -23,7 +24,8 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: SplashScreen(),
+      // home: SplashScreen(),
+      home: const Navipage(),
     );
   }
 }

@@ -26,25 +26,7 @@ class _NavipageState extends State<Navipage> {
     AccountPage()
   ];
 
-  List _atPages = [
-    Text(
-      "Home",
-      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
-    ),
-    Text(
-      "History",
-      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
-    ),
-    Text(
-      "Wallet",
-      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
-    ),
-    Text(
-      "Account",
-      style: TextStyle(color: Colors.black, fontFamily: 'Noto Sans'),
-    )
-  ];
-
+  
   void _onItemTapped(int index) {
     setState(() {
       _selectedIndex = index;
@@ -54,9 +36,6 @@ class _NavipageState extends State<Navipage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-          backgroundColor: Color(0xffEACDA2),
-          title: _atPages.elementAt(_selectedIndex)),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
