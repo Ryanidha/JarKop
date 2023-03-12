@@ -30,7 +30,6 @@ class _AccountPageState extends State<AccountPage> {
     Get.offAll(LoginRegister());
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,7 +54,7 @@ class _AccountPageState extends State<AccountPage> {
                       fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
-                  '+62 1234567890\nAB 1238 CC',
+                  '+62 1234567890\n ${Splitter()}@mail.com',
                   style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
                 ),
                 trailing: IconButton(
