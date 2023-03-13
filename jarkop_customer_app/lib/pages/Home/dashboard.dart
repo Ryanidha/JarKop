@@ -219,72 +219,138 @@ class _DashboardState extends State<Dashboard> {
         SizedBox(
           height: 20,
         ),
-        Container(
-          child: SingleChildScrollView(
-            // shrinkWrap: true,
-            physics: const ScrollPhysics(),
-            child: Column(
-              children: [
-                ListView(
-                  shrinkWrap: true,
+        Expanded(
+          child: ListView(
+            shrinkWrap: true,
+            children: [
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text(
+                          "Today’s Promotions",
+                          style: TextStyle(
+                              fontFamily: 'NotoSans',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  HorizontalCarousel(
+                    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+                    height: 155,
+                    width: 267,
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Column(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Container(
+                        padding: EdgeInsets.only(left: 20),
+                        child: Text(
+                          "Our Recomendations",
+                          style: TextStyle(
+                              fontFamily: 'NotoSans',
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
+                    ],
+                  ),
+                  HorizontalCarousel(
+                    items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+                    height: 115,
+                    width: 114,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Text(
+                      "Quick Items",
+                      style: TextStyle(
+                          fontFamily: 'NotoSans',
+                          fontSize: 20,
+                          fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 29),
+                child: Row(
                   children: [
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Text(
-                                "Today’s Promotions",
-                                style: TextStyle(
-                                    fontFamily: 'NotoSans',
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                        HorizontalCarousel(
-                          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-                          height: 155,
-                          width: 267,
-                        ),
-                      ],
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(color: Colors.grey),
                     ),
-                    Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Container(
-                              padding: EdgeInsets.only(left: 20),
-                              child: Text(
-                                "Our Recomendations",
-                                style: TextStyle(
-                                    fontFamily: 'NotoSans',
-                                    fontSize: 20,
-                                    fontWeight: FontWeight.bold),
-                              ),
-                            ),
-                          ],
-                        ),
-                        HorizontalCarousel(
-                          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-                          height: 115,
-                          width: 114,
-                        ),
-                      ],
-                    ),
-                    Column(
-                      children: [
-                        Row(),
-                      ],
+                    Container(
+                      padding: EdgeInsets.only(left: 11),
+                      child: Column(
+                        children: const [
+                          Text(
+                            "Cafe A",
+                            style: TextStyle(
+                                fontFamily: 'NotoSans',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          )
+                        ],
+                      ),
                     )
                   ],
-                )
-              ],
-            ),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 29),
+                child: Row(
+                  children: [
+                    Container(
+                      height: 100,
+                      width: 100,
+                      decoration: BoxDecoration(color: Colors.grey),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 11),
+                      child: Column(
+                        children: const [
+                          Text(
+                            "Cafe B",
+                            style: TextStyle(
+                                fontFamily: 'NotoSans',
+                                fontWeight: FontWeight.bold,
+                                fontSize: 20),
+                          )
+                        ],
+                      ),
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
         )
       ],
