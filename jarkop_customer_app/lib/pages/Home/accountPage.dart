@@ -34,7 +34,7 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: ListView(
+      body: Column(
         children: [
           const SizedBox(
             height: 40,
@@ -50,12 +50,12 @@ class _AccountPageState extends State<AccountPage> {
                   'John Doe',
                   style: TextStyle(
                       fontSize: 24,
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontWeight: FontWeight.bold),
                 ),
                 subtitle: Text(
                   '+62 1234567890\n ${Splitter()}@mail.com',
-                  style: TextStyle(fontFamily: 'Noto Sans', fontSize: 16),
+                  style: TextStyle(fontFamily: 'NotoSans', fontSize: 16),
                 ),
                 trailing: IconButton(
                     onPressed: () {
@@ -72,7 +72,7 @@ class _AccountPageState extends State<AccountPage> {
                 child: Text(
                   "Account",
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
@@ -82,7 +82,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Rewards",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -92,7 +92,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Business Profile",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -102,7 +102,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Notification",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -112,7 +112,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Settings",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -127,7 +127,7 @@ class _AccountPageState extends State<AccountPage> {
                 child: Text(
                   "General",
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
@@ -137,7 +137,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Help Center",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -147,7 +147,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Feedback",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -157,7 +157,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Rating",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -167,7 +167,7 @@ class _AccountPageState extends State<AccountPage> {
           ListTile(
             title: Text(
               "Rewards",
-              style: TextStyle(fontFamily: 'Noto Sans', fontSize: 20),
+              style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
             ),
             trailing: IconButton(
               onPressed: (() {}),
@@ -177,7 +177,7 @@ class _AccountPageState extends State<AccountPage> {
           SizedBox(height: 20),
           Container(
             height: 50,
-            width: 20,
+            width: 100,
             decoration: BoxDecoration(
               color: Colors.white,
               border: Border.all(color: Colors.black),
@@ -193,7 +193,7 @@ class _AccountPageState extends State<AccountPage> {
                     fontSize: 20,
                     color: Colors.black,
                     fontWeight: FontWeight.bold,
-                    fontFamily: 'Noto Sans'),
+                    fontFamily: 'NotoSans'),
               ),
             ),
           ),

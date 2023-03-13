@@ -75,7 +75,7 @@ class _RegisterpageState extends State<Registerpage> {
                   const Text(
                     'Welcome to Jalur Kopi',
                     style: TextStyle(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'Miniver',
                         fontSize: 24,
                         color: Colors.black),
                   ),
@@ -160,7 +160,7 @@ class _RegisterpageState extends State<Registerpage> {
                       child: const Text(
                         "DAFTAR",
                         style: TextStyle(
-                            fontFamily: 'Inter',
+                            fontFamily: 'NotoSans',
                             fontSize: 18,
                             color: Color(0xffeacda2),
                             fontWeight: FontWeight.bold),

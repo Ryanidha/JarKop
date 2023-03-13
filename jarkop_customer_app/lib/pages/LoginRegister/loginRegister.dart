@@ -59,7 +59,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
-                            fontFamily: 'Inter'),
+                            fontFamily: 'NotoSans'),
                       )),
                 ),
                 const SizedBox(
@@ -82,7 +82,7 @@ class _LoginRegisterState extends State<LoginRegister> {
                             fontSize: 20,
                             fontWeight: FontWeight.bold,
                             color: Colors.black,
-                            fontFamily: 'Inter'),
+                            fontFamily: 'NotoSans'),
                       )),
                 )
               ])),

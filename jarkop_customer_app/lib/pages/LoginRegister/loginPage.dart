@@ -55,7 +55,7 @@ class _loginpageState extends State<loginpage> {
                     child: const Text(
                   'Welcome to Jalur Kopi',
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'Miniver',
                       fontSize: 24,
                       color: Colors.black),
                 )),
@@ -124,7 +124,7 @@ class _loginpageState extends State<loginpage> {
                       child: Text(
                         "MASUK",
                         style: TextStyle(
-                            fontFamily: 'Inter',
+                            fontFamily: 'NotoSans',
                             fontSize: 18,
                             color: Color(0xffeacda2),
                             fontWeight: FontWeight.bold),

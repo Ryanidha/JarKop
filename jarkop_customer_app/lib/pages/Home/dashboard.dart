@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:jarkop_customer_app/widgets/carousel.dart';
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -19,6 +20,7 @@ class _DashboardState extends State<Dashboard> {
     'FK UGM',
     'FISIPOL UGM',
   ];
+
   @override
   Widget build(BuildContext context) {
     final sw = MediaQuery.of(context).size.width;
@@ -53,7 +55,7 @@ class _DashboardState extends State<Dashboard> {
                                 child: Text(
                                   "Deliver to",
                                   style: TextStyle(
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'NotoSans',
                                     fontSize: 14,
                                   ),
                                 ),
@@ -81,7 +83,7 @@ class _DashboardState extends State<Dashboard> {
                                 style: TextStyle(
                                     fontSize: 18,
                                     color: Colors.black,
-                                    fontFamily: 'Noto Sans',
+                                    fontFamily: 'NotoSans',
                                     fontWeight: FontWeight.bold),
                                 // dropdownColor: Colors.white,
                                 iconEnabledColor: Colors.white,
@@ -167,13 +169,13 @@ class _DashboardState extends State<Dashboard> {
                           Text(
                             "Balance",
                             style: TextStyle(
-                              fontFamily: 'Noto Sans',
+                              fontFamily: 'NotoSans',
                             ),
                           ),
                           Text(
                             "100.000",
                             style: TextStyle(
-                                fontFamily: 'Noto Sans',
+                                fontFamily: 'NotoSans',
                                 fontWeight: FontWeight.bold),
                           )
                         ],
@@ -196,13 +198,13 @@ class _DashboardState extends State<Dashboard> {
                           Text(
                             "Voucher",
                             style: TextStyle(
-                              fontFamily: 'Noto Sans',
+                              fontFamily: 'NotoSans',
                             ),
                           ),
                           Text(
                             "100.000",
                             style: TextStyle(
-                                fontFamily: 'Noto Sans',
+                                fontFamily: 'NotoSans',
                                 fontWeight: FontWeight.bold),
                           )
                         ],
@@ -218,20 +220,71 @@ class _DashboardState extends State<Dashboard> {
           height: 20,
         ),
         Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              Container(
-                padding: EdgeInsets.only(left: 20),
-                child: Text(
-                  "Today’s Promotions",
-                  style: TextStyle(
-                      fontFamily: 'Noto Sans',
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold),
-                ),
-              )
-            ],
+          child: SingleChildScrollView(
+            // shrinkWrap: true,
+            physics: const ScrollPhysics(),
+            child: Column(
+              children: [
+                ListView(
+                  shrinkWrap: true,
+                  children: [
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Today’s Promotions",
+                                style: TextStyle(
+                                    fontFamily: 'NotoSans',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                        HorizontalCarousel(
+                          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+                          height: 155,
+                          width: 267,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Container(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Text(
+                                "Our Recomendations",
+                                style: TextStyle(
+                                    fontFamily: 'NotoSans',
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold),
+                              ),
+                            ),
+                          ],
+                        ),
+                        HorizontalCarousel(
+                          items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
+                          height: 115,
+                          width: 114,
+                        ),
+                      ],
+                    ),
+                    Column(
+                      children: [
+                        Row(),
+                      ],
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         )
       ],
