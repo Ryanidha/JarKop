@@ -60,7 +60,7 @@ class _userRegisterState extends State<userRegister> {
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       labelStyle: TextStyle(color: Colors.grey),
-                      labelText: "NIK"),
+                      labelText: "Tanggal Lahir (dd/mm/yyyy)"),
                 ),
               ),
               const SizedBox(
@@ -76,23 +76,7 @@ class _userRegisterState extends State<userRegister> {
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       labelStyle: TextStyle(color: Colors.grey),
-                      labelText: "Nama Kendaraan"),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: sw * 0.8,
-                padding: const EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
-                child: TextFormField(
-                  decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      labelStyle: TextStyle(color: Colors.grey),
-                      labelText: "No.Kendaraan"),
+                      labelText: "Jenis Kelamin"),
                 ),
               ),
               const SizedBox(
@@ -113,7 +97,7 @@ class _userRegisterState extends State<userRegister> {
                   child: Text(
                     "Continue",
                     style: TextStyle(
-                        fontFamily: 'Inter',
+                        fontFamily: 'NotoSans',
                         fontSize: 18,
                         color: Color(0xffeacda2),
                         fontWeight: FontWeight.bold),

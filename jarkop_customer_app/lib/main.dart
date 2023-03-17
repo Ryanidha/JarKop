@@ -4,7 +4,6 @@ import 'package:get/get.dart';
 import 'package:jarkop_customer_app/pages/NavigatorPage/naviPage.dart';
 import 'package:jarkop_customer_app/pages/SplashScreen/splashScreen.dart';
 
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -21,12 +20,10 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        
         primarySwatch: Colors.blue,
       ),
-      // home: SplashScreen(),
-      home: const Navipage(),
+      home: SplashScreen(),
+      // home: const Navipage(),
     );
   }
 }
-

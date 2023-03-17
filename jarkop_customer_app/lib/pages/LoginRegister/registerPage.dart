@@ -44,7 +44,13 @@ class _RegisterpageState extends State<Registerpage> {
       // );
     } catch (e) {
       print(e);
-      SnackBar(content: Text(e.toString()));
+      Get.snackbar('About Register', 'Register message',
+          backgroundColor: Colors.redAccent,
+          snackPosition: SnackPosition.BOTTOM,
+          titleText: Text('Register failed',
+              style: TextStyle(color: Colors.white, fontFamily: 'NotoSans')),
+          messageText: Text(e.toString(),
+              style: TextStyle(color: Colors.white, fontFamily: 'NotoSans')));
     }
   }
 

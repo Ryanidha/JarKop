@@ -34,6 +34,17 @@ class _AccountPageState extends State<AccountPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
+        appBar: AppBar(
+          backgroundColor: Color(0xffEACDA2),
+          title: Text(
+            'History',
+            style: TextStyle(
+              fontFamily: 'NotoSans',
+              fontSize: 20,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
         body: SingleChildScrollView(
           child: Column(
             children: [
@@ -92,7 +103,7 @@ class _AccountPageState extends State<AccountPage> {
               ),
               ListTile(
                 title: Text(
-                  "Business Profile",
+                  "Promotions",
                   style: TextStyle(fontFamily: 'NotoSans', fontSize: 20),
                 ),
                 trailing: IconButton(

@@ -30,8 +30,14 @@ class _loginpageState extends State<loginpage> {
               email: _emailController.text, password: _passwordController.text)
           .then((value) => Get.offAll(() => Navipage()));
     } catch (e) {
-      print(e);
-      SnackBar(content: Text(e.toString()));
+      // print(e);
+      Get.snackbar('About Login', 'Login message',
+          backgroundColor: Colors.redAccent,
+          snackPosition: SnackPosition.BOTTOM,
+          titleText: Text('Login failed',
+              style: TextStyle(color: Colors.white, fontFamily: 'NotoSans')),
+          messageText: Text(e.toString(),
+              style: TextStyle(color: Colors.white, fontFamily: 'NotoSans')));
     }
   }
 
