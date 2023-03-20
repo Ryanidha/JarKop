@@ -14,14 +14,9 @@ class accountPage extends StatefulWidget {
 }
 
 class _accountPageState extends State<accountPage> {
-  final user = FirebaseAuth.instance.currentUser;
+  // final user = FirebaseAuth.instance.currentUser;
 
-  Splitter() {
-    List<String> nama = (user!.email.toString().split('@'));
-    String username = nama[0];
-
-    return username;
-  }
+  final useremail = FirebaseAuth.instance.currentUser!.email;
 
   _signOut() async {
     await FirebaseAuth.instance.signOut().then((value) => Navigator.of(context)
@@ -58,7 +53,7 @@ class _accountPageState extends State<accountPage> {
                         fontWeight: FontWeight.bold),
                   ),
                   subtitle: Text(
-                    '+62 1234567890\n${Splitter()}@mail.com',
+                    '+62 1234567890\n${useremail}',
                     style: TextStyle(fontFamily: 'NotoSans', fontSize: 16),
                   ),
                   trailing: IconButton(

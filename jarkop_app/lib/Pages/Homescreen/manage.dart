@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:jarkop_app/widgets/addMenu.dart';
 
 class StorePage extends StatefulWidget {
   const StorePage({super.key});
@@ -105,7 +107,9 @@ class _StorePageState extends State<StorePage> {
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(AddMenu());
+        },
         child: Icon(
           Icons.add,
           color: Colors.black,

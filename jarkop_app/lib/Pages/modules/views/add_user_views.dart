@@ -33,6 +33,23 @@ class AddUserView extends GetView<AddUserController> {
                       labelText: "Nama"),
                 ),
               ),
+               const SizedBox(
+                height: 20,
+              ),
+              Container(
+                width: sw * 0.8,
+                padding: const EdgeInsets.only(left: 10),
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(10)),
+                child: TextFormField(
+                  controller: controller.shopnameC,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      labelStyle: TextStyle(color: Colors.grey),
+                      labelText: "Nama Toko"),
+                ),
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -81,6 +98,7 @@ class AddUserView extends GetView<AddUserController> {
                   onPressed: (() {
                     controller.addUser(
                       controller.nameC.text,
+                      controller.shopnameC.text,
                       controller.idC.text,
                       controller.phonenumberC.text,
                     );

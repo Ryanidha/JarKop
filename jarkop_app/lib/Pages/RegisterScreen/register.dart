@@ -91,21 +91,6 @@ class _RegisterpageState extends State<Registerpage> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
-                      controller: _phoneController,
-                      decoration: new InputDecoration(
-                          border: InputBorder.none,
-                          labelStyle: TextStyle(color: Colors.grey),
-                          labelText: "No.HP"),
-                    ),
-                  ),
-                  SizedBox(height: 20),
-                  Container(
-                    width: sw,
-                    padding: EdgeInsets.only(left: 10),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)),
-                    child: TextFormField(
                       controller: _emailController,
                       decoration: new InputDecoration(
                           border: InputBorder.none,

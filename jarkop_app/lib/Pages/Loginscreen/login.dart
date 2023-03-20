@@ -4,7 +4,6 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_app/Pages/Homescreen/home.dart';
-import 'package:jarkop_app/Pages/modules/controllers/auth_controller.dart';
 
 import '../navipage.dart';
 
