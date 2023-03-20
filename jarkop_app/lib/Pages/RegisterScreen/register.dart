@@ -5,6 +5,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_app/Pages/Homescreen/home.dart';
+import 'package:jarkop_app/Pages/RegisterScreen/userRegister.dart';
 import 'package:jarkop_app/Pages/navipage.dart';
 
 class Registerpage extends StatefulWidget {
@@ -36,26 +37,26 @@ class _RegisterpageState extends State<Registerpage> {
           .createUserWithEmailAndPassword(
               email: _emailController.text.toString().trim(),
               password: _passwordController.text)
-          .then((value) => Get.offAll(() => Navipage()));
+          .then((value) => Get.offAll(() => userRegister()));
 
-      addUserDetails(
-        _nameController.text.trim(),
-        int.parse(_phoneController.text.trim()),
-        _emailController.text.trim(),
-      );
+      // addUserDetails(
+      //   _nameController.text.trim(),
+      //   int.parse(_phoneController.text.trim()),
+      //   _emailController.text.trim(),
+      // );
     } catch (e) {
       print(e);
       SnackBar(content: Text(e.toString()));
     }
   }
 
-  Future addUserDetails(String Nama, int Phone, String Email) async {
-    await FirebaseFirestore.instance.collection('users').add({
-      'Nama': Nama,
-      'Phone': Phone,
-      'Email': Email,
-    });
-  }
+  // Future addUserDetails(String Nama, int Phone, String Email) async {
+  //   await FirebaseFirestore.instance.collection('users').add({
+  //     'Nama': Nama,
+  //     'Phone': Phone,
+  //     'Email': Email,
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {

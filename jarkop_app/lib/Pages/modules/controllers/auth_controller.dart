@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:get/get.dart';
-import '../Pages/navipage.dart';
+import '../../navipage.dart';
 
 class LoginController {
-  const LoginController({required this.email, required this.password, required this.auth});
+  const LoginController({required this.emailController, required this.passwordController, required this.authController});
 
-  final email;
-  final password;
-  final auth;
+  final emailController;
+  final passwordController;
+  final authController;
   Future<void> loginSubmit() async {
     try {
-      await auth
+      await authController
           .signInWithEmailAndPassword(
-              email: email.text, password: password.text)
+              email: emailController.text, password: passwordController.text)
           .then((value) => Get.offAll(() => Navipage()));
     } catch (e) {
       print(e);
@@ -21,8 +21,5 @@ class LoginController {
     }
   }
 
-  void dispose() {
-    email.dispose();
-    email.dispose();
-  }
+ 
 }

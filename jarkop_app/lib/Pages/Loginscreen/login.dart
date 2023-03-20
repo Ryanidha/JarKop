@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_app/Pages/Homescreen/home.dart';
-import 'package:jarkop_app/controller/auth_controller.dart';
+import 'package:jarkop_app/Pages/modules/controllers/auth_controller.dart';
 
 import '../navipage.dart';
 
@@ -23,17 +23,17 @@ class _loginpageState extends State<loginpage> {
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  // loginSubmit() async {
-  //   try {
-  //     await _firebaseAuth
-  //         .signInWithEmailAndPassword(
-  //             email: _emailController.text, password: _passwordController.text)
-  //         .then((value) => Get.offAll(() => Navipage()));
-  //   } catch (e) {
-  //     print(e);
-  //     SnackBar(content: Text(e.toString()));
-  //   }
-  // }
+  loginSubmit() async {
+    try {
+      await _firebaseAuth
+          .signInWithEmailAndPassword(
+              email: _emailController.text, password: _passwordController.text)
+          .then((value) => Get.offAll(() => Navipage()));
+    } catch (e) {
+      print(e);
+      SnackBar(content: Text(e.toString()));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -90,7 +90,7 @@ class _loginpageState extends State<loginpage> {
                       obscureText: !_passwordVisible,
                       decoration: new InputDecoration(
                         border: InputBorder.none,
-                        labelStyle: TextStyle(color: Colors.grey),
+                        labelStyle: const TextStyle(color: Colors.grey),
                         labelText: "Password",
                         suffixIcon: IconButton(
                           icon: Icon(
@@ -120,10 +120,7 @@ class _loginpageState extends State<loginpage> {
                         borderRadius: BorderRadius.circular(15)),
                     child: TextButton(
                       onPressed: (() {
-                        LoginController(
-                            email: _emailController,
-                            password: _passwordController,
-                            auth: _firebaseAuth);
+                        loginSubmit();
                       }),
                       child: Text(
                         "MASUK",
