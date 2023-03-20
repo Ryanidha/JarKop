@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_app/Pages/Homescreen/home.dart';
+import 'package:jarkop_app/controller/auth_controller.dart';
 
 import '../navipage.dart';
 
@@ -22,17 +23,17 @@ class _loginpageState extends State<loginpage> {
 
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
-  loginSubmit() async {
-    try {
-      await _firebaseAuth
-          .signInWithEmailAndPassword(
-              email: _emailController.text, password: _passwordController.text)
-          .then((value) => Get.offAll(() => Navipage()));
-    } catch (e) {
-      print(e);
-      SnackBar(content: Text(e.toString()));
-    }
-  }
+  // loginSubmit() async {
+  //   try {
+  //     await _firebaseAuth
+  //         .signInWithEmailAndPassword(
+  //             email: _emailController.text, password: _passwordController.text)
+  //         .then((value) => Get.offAll(() => Navipage()));
+  //   } catch (e) {
+  //     print(e);
+  //     SnackBar(content: Text(e.toString()));
+  //   }
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -51,17 +52,17 @@ class _loginpageState extends State<loginpage> {
                         Image.asset("assets/logo.png", width: sw, height: 100),
                   ),
                   Container(
-                    child: const Text(
-                  'Merchant',
-                  style: TextStyle(
-                      fontFamily: 'Noto Sans',
-                      fontSize: 24,
-                      color: Colors.black),
-                )),
+                      child: const Text(
+                    'Merchant',
+                    style: TextStyle(
+                        fontFamily: 'Noto Sans',
+                        fontSize: 24,
+                        color: Colors.black),
+                  )),
                   const SizedBox(
                     height: 20,
                   ),
-                 Container(
+                  Container(
                     width: sw,
                     padding: const EdgeInsets.only(left: 10),
                     decoration: BoxDecoration(
@@ -75,8 +76,10 @@ class _loginpageState extends State<loginpage> {
                           labelText: "Email"),
                     ),
                   ),
-                  const SizedBox(height: 20,),
-                   Container(
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  Container(
                     width: sw,
                     padding: EdgeInsets.only(left: 10),
                     decoration: BoxDecoration(
@@ -86,10 +89,10 @@ class _loginpageState extends State<loginpage> {
                       controller: _passwordController,
                       obscureText: !_passwordVisible,
                       decoration: new InputDecoration(
-                          border: InputBorder.none,
-                          labelStyle: TextStyle(color: Colors.grey),
-                          labelText: "Password",
-                          suffixIcon: IconButton(
+                        border: InputBorder.none,
+                        labelStyle: TextStyle(color: Colors.grey),
+                        labelText: "Password",
+                        suffixIcon: IconButton(
                           icon: Icon(
                             _passwordVisible
                                 ? Icons.visibility
@@ -117,8 +120,10 @@ class _loginpageState extends State<loginpage> {
                         borderRadius: BorderRadius.circular(15)),
                     child: TextButton(
                       onPressed: (() {
-                        loginSubmit();
-                        
+                        LoginController(
+                            email: _emailController,
+                            password: _passwordController,
+                            auth: _firebaseAuth);
                       }),
                       child: Text(
                         "MASUK",

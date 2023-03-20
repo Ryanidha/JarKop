@@ -92,7 +92,7 @@ class _historyDescription extends StatelessWidget {
                 child: Text(
                   "Detail",
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontSize: 12,
                       color: Colors.black),
                 ),

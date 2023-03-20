@@ -37,7 +37,7 @@ class _loginScreenState extends State<loginScreen> {
                     child: const Text(
                   'Merchant',
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontSize: 24,
                       color: Colors.black),
                 )),

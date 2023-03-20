@@ -32,14 +32,14 @@ class _DashboardState extends State<Dashboard> {
                 title: Text(
                   "Balance",
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontSize: 14,
                       color: Colors.black),
                 ),
                 subtitle: Text(
                   "Rp 1.000.000",
                   style: TextStyle(
-                      fontFamily: 'Noto Sans',
+                      fontFamily: 'NotoSans',
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.black),
@@ -64,7 +64,7 @@ class _DashboardState extends State<Dashboard> {
                   Text(
                     "You Have 2 Orders Left",
                     style: TextStyle(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'NotoSans',
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
@@ -82,7 +82,7 @@ class _DashboardState extends State<Dashboard> {
                     child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
-                          fontFamily: 'Noto Sans',
+                          fontFamily: 'NotoSans',
                           fontSize: 18,
                           color: Colors.black),
                     ),
@@ -92,7 +92,7 @@ class _DashboardState extends State<Dashboard> {
                     child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
-                          fontFamily: 'Noto Sans',
+                          fontFamily: 'NotoSans',
                           fontSize: 18,
                           color: Colors.black),
                     ),
@@ -106,7 +106,7 @@ class _DashboardState extends State<Dashboard> {
                       child: const Text(
                         "Confirm Delivery",
                         style: TextStyle(
-                            fontFamily: 'Noto Sans',
+                            fontFamily: 'NotoSans',
                             fontSize: 18,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),
@@ -121,7 +121,7 @@ class _DashboardState extends State<Dashboard> {
               height: 60,
               padding: EdgeInsets.only(left: 70),
               decoration: const BoxDecoration(
-                color: Colors.red,
+                color: Colors.green,
               ),
               child: Row(
                 children: const [
@@ -130,9 +130,9 @@ class _DashboardState extends State<Dashboard> {
                     color: Colors.white,
                   ),
                   Text(
-                    "You Have 2 Orders Left",
+                    "You Have 1 New Order",
                     style: TextStyle(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'NotoSans',
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
                         color: Colors.white),
@@ -150,7 +150,7 @@ class _DashboardState extends State<Dashboard> {
                     child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
-                          fontFamily: 'Noto Sans',
+                          fontFamily: 'NotoSans',
                           fontSize: 18,
                           color: Colors.black),
                     ),
@@ -160,7 +160,7 @@ class _DashboardState extends State<Dashboard> {
                     child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
-                          fontFamily: 'Noto Sans',
+                          fontFamily: 'NotoSans',
                           fontSize: 18,
                           color: Colors.black),
                     ),
@@ -174,7 +174,7 @@ class _DashboardState extends State<Dashboard> {
                       child: Text(
                         "Confirm Delivery",
                         style: TextStyle(
-                            fontFamily: 'Noto Sans',
+                            fontFamily: 'NotoSans',
                             fontSize: 18,
                             color: Colors.black,
                             fontWeight: FontWeight.bold),

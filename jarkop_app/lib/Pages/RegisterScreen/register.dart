@@ -76,7 +76,7 @@ class _RegisterpageState extends State<Registerpage> {
                   const Text(
                     'Merchant',
                     style: TextStyle(
-                        fontFamily: 'Noto Sans',
+                        fontFamily: 'NotoSans',
                         fontSize: 24,
                         color: Colors.black),
                   ),
