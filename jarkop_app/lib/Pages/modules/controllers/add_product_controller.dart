@@ -1,6 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_app/Pages/Homescreen/manage.dart';
 import 'package:jarkop_app/Pages/navipage.dart';
 
 class AddProductController extends GetxController {
@@ -8,30 +10,36 @@ class AddProductController extends GetxController {
   late TextEditingController nameC;
   late TextEditingController priceC;
   late TextEditingController descriptionC;
+  late TextEditingController typesC;
 
-  void addProduct(String name, int price, String description) async {
+  void addProduct(String name, String price, String description, String types,
+      String url) async {
     CollectionReference products = _firestore.collection('products');
+    final user = FirebaseAuth.instance.currentUser;
+    final email = user!.email;
 
     try {
       await products.add({
-      'name': name,
-      'price': price,
-      'description': description,
-    }).then((value) => Get.off(Navipage()));
-
+        'email': email,
+        'name': name,
+        'price': price,
+        'description': description,
+        'types': types,
+        'image': url,
+      }).then((value) => Get.back());
     } catch (e) {
       print(e);
       Get.defaultDialog(
-          title: 'Error', middleText: e.toString(), textConfirm: 'OK'
-      );
+          title: 'Error', middleText: e.toString(), textConfirm: 'OK');
     }
-   
   }
+
   @override
   void onInit() {
     nameC = TextEditingController();
     priceC = TextEditingController();
     descriptionC = TextEditingController();
+    typesC = TextEditingController();
     super.onInit();
   }
 
@@ -40,6 +48,7 @@ class AddProductController extends GetxController {
     nameC.dispose();
     priceC.dispose();
     descriptionC.dispose();
+    typesC.dispose();
     super.onClose();
   }
 }
