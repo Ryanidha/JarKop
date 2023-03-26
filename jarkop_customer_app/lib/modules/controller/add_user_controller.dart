@@ -2,31 +2,30 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:get/get.dart';
-import 'package:jarkop_app/Pages/navipage.dart';
+import 'package:jarkop_customer_app/pages/NavigatorPage/naviPage.dart';
 
 class AddUserController extends GetxController {
   late TextEditingController nameC;
-  late TextEditingController idC;
+  late TextEditingController birthdateC;
   late TextEditingController phonenumberC;
-  late TextEditingController shopnameC;
+  late TextEditingController genderC;
 
   final _firestore = FirebaseFirestore.instance;
 
-  void addUser(
-      String name, String id, String shopname, String phonenumber) async {
+  void addUser(String name, String birthdate,String phonenumber, String gender) async {
     CollectionReference users = _firestore.collection('users');
     final user = FirebaseAuth.instance.currentUser;
     final email = user!.email;
-    final type = 'merchant';
+    final type = 'user';
 
     try {
       await users.add({
-        'account': 'merchant',
+        'account': type,
         'email': email,
         'name': name,
-        'shopname': shopname,
-        'NIK': id,
-        'phonenumber': phonenumber,
+        'birthdate': birthdate,
+        'phonenumber': phonenumber,	
+        'gender': gender,
       }).then((value) => Get.off(Navipage()));
     } catch (e) {
       print(e);
@@ -38,18 +37,18 @@ class AddUserController extends GetxController {
   @override
   void onInit() {
     nameC = TextEditingController();
-    idC = TextEditingController();
-    shopnameC = TextEditingController();
+    birthdateC = TextEditingController();
     phonenumberC = TextEditingController();
+    genderC = TextEditingController();
     super.onInit();
   }
 
   @override
   void onClose() {
-    nameC.dispose();
-    shopnameC.dispose();
-    idC.dispose();
-    phonenumberC.dispose();
+    nameC = TextEditingController();
+    birthdateC = TextEditingController();
+    phonenumberC = TextEditingController();
+    genderC = TextEditingController();
     super.onClose();
   }
 }

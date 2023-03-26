@@ -1,8 +1,14 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:jarkop_customer_app/pages/merchant/listPage.dart';
 import 'package:jarkop_customer_app/widgets/carousel.dart';
+
+final useremail = FirebaseAuth.instance.currentUser!.email;
 
 class Dashboard extends StatefulWidget {
   const Dashboard({super.key});
@@ -290,70 +296,149 @@ class _DashboardState extends State<Dashboard> {
                           fontWeight: FontWeight.bold),
                     ),
                   ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Get.to(() => ListPage());
+                      },
+                      icon: Icon(
+                        Icons.arrow_forward,
+                        size: 20,
+                      ))
                 ],
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 29),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(color: Colors.grey),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 11),
-                      child: Column(
-                        children: const [
-                          Text(
-                            "Cafe A",
-                            style: TextStyle(
-                                fontFamily: 'NotoSans',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                padding: EdgeInsets.only(left: 29),
-                child: Row(
-                  children: [
-                    Container(
-                      height: 100,
-                      width: 100,
-                      decoration: BoxDecoration(color: Colors.grey),
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(left: 11),
-                      child: Column(
-                        children: const [
-                          Text(
-                            "Cafe B",
-                            style: TextStyle(
-                                fontFamily: 'NotoSans',
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
-                ),
-              ),
+              _getWidget()
+
+              // Container(
+              //   padding: EdgeInsets.only(left: 29),
+              //   child: Row(
+              //     children: [
+              //       Container(
+              //         height: 100,
+              //         width: 100,
+              //         decoration: BoxDecoration(color: Colors.grey),
+              //       ),
+              //       Container(
+              //         padding: EdgeInsets.only(left: 11),
+              //         child: Column(
+              //           children: const [
+              //             Text(
+              //               "Cafe A",
+              //               style: TextStyle(
+              //                   fontFamily: 'NotoSans',
+              //                   fontWeight: FontWeight.bold,
+              //                   fontSize: 20),
+              //             )
+              //           ],
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // ),
+              // const SizedBox(
+              //   height: 20,
+              // ),
+              // Container(
+              //   padding: EdgeInsets.only(left: 29),
+              //   child: Row(
+              //     children: [
+              //       Container(
+              //         height: 100,
+              //         width: 100,
+              //         decoration: BoxDecoration(color: Colors.grey),
+              //       ),
+              //       Container(
+              //         padding: EdgeInsets.only(left: 11),
+              //         child: Column(
+              //           children: const [
+              //             Text(
+              //               "Cafe B",
+              //               style: TextStyle(
+              //                   fontFamily: 'NotoSans',
+              //                   fontWeight: FontWeight.bold,
+              //                   fontSize: 20),
+              //             )
+              //           ],
+              //         ),
+              //       )
+              //     ],
+              //   ),
+              // ),
             ],
           ),
         )
       ],
+    );
+  }
+
+  Widget _getWidget() {
+    Stream<QuerySnapshot> _usersStream = FirebaseFirestore.instance
+        .collection('users')
+        .where('account', isEqualTo: 'merchant')
+        .snapshots();
+    return StreamBuilder<QuerySnapshot<Object?>>(
+      stream: _usersStream,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text('Something went wrong');
+        }
+
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Text("Loading");
+        }
+
+        if (snapshot.data!.docs.length == 0) {
+          return Text('No Data');
+        }
+        return ListView(
+          shrinkWrap: true,
+          primary: false,
+          children: snapshot.data!.docs.map((DocumentSnapshot document) {
+            Map<String, dynamic> data =
+                document.data()! as Map<String, dynamic>;
+            return Column(
+              children: [
+                SizedBox(height: 13),
+                Container(
+                    padding: EdgeInsets.only(left: 20),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 100,
+                          width: 100,
+                          margin: EdgeInsets.only(top: 15),
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(10),
+                            // image: DecorationImage(
+                            //   image: NetworkImage(data['image']),
+                            //   fit: BoxFit.cover,
+                            // ),
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.only(left: 11),
+                          child: Column(
+                            children: [
+                              Text(
+                                data['shopname'],
+                                style: TextStyle(
+                                    fontFamily: 'NotoSans',
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                            ],
+                          ),
+                        )
+                      ],
+                    ))
+              ],
+            );
+          }).toList(),
+        );
+      },
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/add_user_controller.dart';
+import 'package:jarkop_customer_app/modules/controller/add_user_controller.dart';
 
 
 
@@ -45,14 +45,31 @@ class AddUserView extends GetView<AddUserController> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
-                  controller: controller.shopnameC,
+                  controller: controller.birthdateC,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       labelStyle: TextStyle(color: Colors.grey),
-                      labelText: "Nama Toko"),
+                      labelText: "Tanggal Lahir (dd/mm/yyyy)"),
                 ),
               ),
               const SizedBox(
+                height: 20,
+              ),
+              Container(
+                    width: sw,
+                    padding: EdgeInsets.only(left: 10),
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10)),
+                    child: TextFormField(
+                      controller: controller.phonenumberC,
+                      decoration: new InputDecoration(
+                          border: InputBorder.none,
+                          labelStyle: TextStyle(color: Colors.grey),
+                          labelText: "No.HP"),
+                    ),
+                  ),
+                  const SizedBox(
                 height: 20,
               ),
               Container(
@@ -62,28 +79,11 @@ class AddUserView extends GetView<AddUserController> {
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
-                  controller: controller.idC,
+                  controller: controller.genderC,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       labelStyle: TextStyle(color: Colors.grey),
-                      labelText: "NIK"),
-                ),
-              ),
-              const SizedBox(
-                height: 20,
-              ),
-              Container(
-                width: sw * 0.8,
-                padding: const EdgeInsets.only(left: 10),
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10)),
-                child: TextFormField(
-                  controller: controller.phonenumberC,
-                  decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      labelStyle: TextStyle(color: Colors.grey),
-                      labelText: "Phone Number"),
+                      labelText: "Jenis Kelamin"),
                 ),
               ),
               const SizedBox(
@@ -100,9 +100,9 @@ class AddUserView extends GetView<AddUserController> {
                   onPressed: (() {
                     controller.addUser(
                       controller.nameC.text,
-                      controller.idC.text,
-                      controller.shopnameC.text,
+                      controller.birthdateC.text,
                       controller.phonenumberC.text,
+                      controller.genderC.text,
                     );
                   }),
                   child: Text(

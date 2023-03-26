@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -5,7 +6,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_app/Pages/Loginscreen/loginScreen.dart';
-
+final useremail = FirebaseAuth.instance.currentUser!.email;
 class accountPage extends StatefulWidget {
   const accountPage({super.key});
 
@@ -15,9 +16,12 @@ class accountPage extends StatefulWidget {
 
 class _accountPageState extends State<accountPage> {
   // final user = FirebaseAuth.instance.currentUser;
-
-  final useremail = FirebaseAuth.instance.currentUser!.email;
-
+  
+  
+  final Future<QuerySnapshot<Object?>> _usersStream = FirebaseFirestore.instance
+      .collection('Products')
+      .where('email', isEqualTo: useremail)
+      .get();
   _signOut() async {
     await FirebaseAuth.instance.signOut().then((value) => Navigator.of(context)
         .pushReplacement(
