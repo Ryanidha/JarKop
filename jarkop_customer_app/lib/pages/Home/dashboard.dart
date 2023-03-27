@@ -6,6 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_customer_app/pages/merchant/listPage.dart';
+import 'package:jarkop_customer_app/pages/merchant/merchantDetail.dart';
 import 'package:jarkop_customer_app/widgets/carousel.dart';
 
 final useremail = FirebaseAuth.instance.currentUser!.email;
@@ -422,12 +423,21 @@ class _DashboardState extends State<Dashboard> {
                           padding: EdgeInsets.only(left: 11),
                           child: Column(
                             children: [
-                              Text(
-                                data['shopname'],
-                                style: TextStyle(
-                                    fontFamily: 'NotoSans',
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 20),
+                              TextButton(
+                                // }),
+                                child: Text(
+                                  data['shopname'],
+                                  style: TextStyle(
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'NotoSans',
+                                      color: Colors.black),
+                                ),
+                                onPressed: () {
+                                  Get.to(() => MerchantDetail(
+                                        Merchdata: data['shopname'],
+                                      ));
+                                },
                               ),
                             ],
                           ),
