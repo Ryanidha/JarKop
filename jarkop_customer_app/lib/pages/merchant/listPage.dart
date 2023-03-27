@@ -2,6 +2,8 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:jarkop_customer_app/pages/merchant/merchantDetail.dart';
 
 class ListPage extends StatefulWidget {
   const ListPage({super.key});
@@ -106,7 +108,7 @@ class _ListPageState extends State<ListPage> {
                                 ),
                               ),
                               SizedBox(
-                                width: 12,
+                                width: 10,
                               ),
                               Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -114,13 +116,48 @@ class _ListPageState extends State<ListPage> {
                                   SizedBox(
                                     height: 12,
                                   ),
-                                  Text(
-                                    data['shopname'],
-                                    style: TextStyle(
-                                        fontSize: 20,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'NotoSans'),
+                                  TextButton(
+                                    // onPressed: (() {
+                                    //   Get.to(() => MerchantDetail());
+                                    // }),
+                                    child: Text(
+                                      data['shopname'],
+                                      style: TextStyle(
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                          fontFamily: 'NotoSans',
+                                          color: Colors.black),
+                                    ),
+                                    onPressed: () {
+                                      Get.to(() => MerchantDetail(
+                                            Merchdata: data['shopname'],
+                                          ));
+                                    },
                                   ),
+                                  Container(
+                                    child: Row(
+                                      children: [
+                                        Icon(
+                                          Icons.star,
+                                          color: Colors.yellow[700],
+                                          size: 20,
+                                        ),
+                                        Text("4.9"),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text("|"),
+                                        SizedBox(width: 10),
+                                        Text("1.5 km"),
+                                        SizedBox(
+                                          width: 10,
+                                        ),
+                                        Text("|"),
+                                        SizedBox(width: 10),
+                                        Text("10 mins"),
+                                      ],
+                                    ),
+                                  )
                                 ],
                               )
                             ],
