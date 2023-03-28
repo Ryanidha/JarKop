@@ -7,6 +7,7 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_customer_app/pages/merchant/listPage.dart';
 import 'package:jarkop_customer_app/pages/merchant/merchantDetail.dart';
+import 'package:jarkop_customer_app/pages/searchPage.dart';
 import 'package:jarkop_customer_app/widgets/carousel.dart';
 
 final useremail = FirebaseAuth.instance.currentUser!.email;
@@ -137,7 +138,13 @@ class _DashboardState extends State<Dashboard> {
                                         hintText: 'Search',
                                         hintStyle: TextStyle(
                                             color: Colors.grey, fontSize: 18),
-                                        prefixIcon: Icon(Icons.search))),
+                                        prefixIcon: IconButton(
+                                          icon: Icon(Icons.search),
+                                          onPressed: () {
+                                            Get.to(() => SeachPage());
+                                          },
+                                          
+                                          ))),
                               ),
                             ],
                           ),
