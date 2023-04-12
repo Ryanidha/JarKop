@@ -64,7 +64,7 @@ class _ListPageState extends State<ListPage> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Text("Loading");
+          return Center(child: CircularProgressIndicator());
         }
 
         if (snapshot.data!.docs.length == 0) {
