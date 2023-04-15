@@ -151,22 +151,7 @@ class _MerchantDetailState extends State<MerchantDetail> {
         }
 
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                child: Text(
-                  'Loading',
-                  style: TextStyle(
-                    fontFamily: 'NotoSans',
-                    fontSize: 20,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-              ),
-            ],
-          );
+          return Center(child: CircularProgressIndicator());
         }
 
         if (snapshot.data!.docs.length == 0) {

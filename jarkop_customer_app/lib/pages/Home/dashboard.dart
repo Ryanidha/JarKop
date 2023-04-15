@@ -143,8 +143,7 @@ class _DashboardState extends State<Dashboard> {
                                           onPressed: () {
                                             Get.to(() => SeachPage());
                                           },
-                                          
-                                          ))),
+                                        ))),
                               ),
                             ],
                           ),
@@ -318,62 +317,6 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
               _getWidget()
-
-              // Container(
-              //   padding: EdgeInsets.only(left: 29),
-              //   child: Row(
-              //     children: [
-              //       Container(
-              //         height: 100,
-              //         width: 100,
-              //         decoration: BoxDecoration(color: Colors.grey),
-              //       ),
-              //       Container(
-              //         padding: EdgeInsets.only(left: 11),
-              //         child: Column(
-              //           children: const [
-              //             Text(
-              //               "Cafe A",
-              //               style: TextStyle(
-              //                   fontFamily: 'NotoSans',
-              //                   fontWeight: FontWeight.bold,
-              //                   fontSize: 20),
-              //             )
-              //           ],
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // Container(
-              //   padding: EdgeInsets.only(left: 29),
-              //   child: Row(
-              //     children: [
-              //       Container(
-              //         height: 100,
-              //         width: 100,
-              //         decoration: BoxDecoration(color: Colors.grey),
-              //       ),
-              //       Container(
-              //         padding: EdgeInsets.only(left: 11),
-              //         child: Column(
-              //           children: const [
-              //             Text(
-              //               "Cafe B",
-              //               style: TextStyle(
-              //                   fontFamily: 'NotoSans',
-              //                   fontWeight: FontWeight.bold,
-              //                   fontSize: 20),
-              //             )
-              //           ],
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
             ],
           ),
         )
