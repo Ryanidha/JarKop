@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:jarkop_customer_app/modules/controller/cart_controller.dart';
+import 'package:jarkop_customer_app/modules/controller/itemCount_controller.dart';
 
 class MerchantDetail extends StatefulWidget {
   final String Merchdata;
