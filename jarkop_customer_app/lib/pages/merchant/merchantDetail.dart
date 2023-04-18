@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_customer_app/modules/controller/cart_controller.dart';
 
 class MerchantDetail extends StatefulWidget {
   final String Merchdata;
@@ -13,6 +14,7 @@ class MerchantDetail extends StatefulWidget {
 }
 
 class _MerchantDetailState extends State<MerchantDetail> {
+  final CartController c = Get.put(CartController());
   int _n = 0;
 
   void add() {
@@ -120,6 +122,28 @@ class _MerchantDetailState extends State<MerchantDetail> {
           ],
         ),
       ),
+      floatingActionButton: Padding(
+        padding: EdgeInsets.only(bottom: 16.0),
+        child: SizedBox(
+          width: 250.0,
+          child: FloatingActionButton(
+            backgroundColor: Color(0xffFFD18D),
+            onPressed: () {},
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8.0),
+            ),
+            child: Text(
+              "ADD TO CART",
+              style: TextStyle(
+                  fontFamily: 'NotoSans',
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black),
+            ),
+          ),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -223,19 +247,15 @@ class _MerchantDetailState extends State<MerchantDetail> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 IconButton(
-                                  onPressed: minus,
+                                  onPressed: () => c.decrement(),
                                   icon: Icon(
                                     Icons.remove,
                                     size: 14,
                                   ),
                                 ),
-                                Text(
-                                  '$_n',
-                                  style: TextStyle(
-                                      fontFamily: 'NotoSans', fontSize: 14),
-                                ),
+                                Obx(() => Text("${c.total.toString()}")),
                                 IconButton(
-                                  onPressed: add,
+                                  onPressed: () => c.increment(),
                                   icon: Icon(
                                     Icons.add,
                                     size: 14,
