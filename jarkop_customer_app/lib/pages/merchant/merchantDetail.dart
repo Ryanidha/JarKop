@@ -15,19 +15,19 @@ class MerchantDetail extends StatefulWidget {
 
 class _MerchantDetailState extends State<MerchantDetail> {
   final CartController c = Get.put(CartController());
-  int _n = 0;
+  // int _n = 0;
 
-  void add() {
-    setState(() {
-      _n++;
-    });
-  }
+  // void add() {
+  //   setState(() {
+  //     _n++;
+  //   });
+  // }
 
-  void minus() {
-    setState(() {
-      if (_n != 0) _n--;
-    });
-  }
+  // void minus() {
+  //   setState(() {
+  //     if (_n != 0) _n--;
+  //   });
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -122,28 +122,28 @@ class _MerchantDetailState extends State<MerchantDetail> {
           ],
         ),
       ),
-      floatingActionButton: Padding(
-        padding: EdgeInsets.only(bottom: 16.0),
-        child: SizedBox(
-          width: 250.0,
-          child: FloatingActionButton(
-            backgroundColor: Color(0xffFFD18D),
-            onPressed: () {},
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8.0),
-            ),
-            child: Text(
-              "ADD TO CART",
-              style: TextStyle(
-                  fontFamily: 'NotoSans',
-                  fontSize: 20,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.black),
-            ),
-          ),
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      // floatingActionButton: Padding(
+      //   padding: EdgeInsets.only(bottom: 16.0),
+      //   child: SizedBox(
+      //     width: 250.0,
+      //     child: FloatingActionButton(
+      //       backgroundColor: Color(0xffFFD18D),
+      //       onPressed: () {},
+      //       shape: RoundedRectangleBorder(
+      //         borderRadius: BorderRadius.circular(8.0),
+      //       ),
+      //       child: Text(
+      //         "ADD TO CART",
+      //         style: TextStyle(
+      //             fontFamily: 'NotoSans',
+      //             fontSize: 20,
+      //             fontWeight: FontWeight.bold,
+      //             color: Colors.black),
+      //       ),
+      //     ),
+      //   ),
+      // ),
+      // floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 
@@ -243,27 +243,54 @@ class _MerchantDetailState extends State<MerchantDetail> {
                           ),
                           Container(
                             margin: EdgeInsets.only(right: 10),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            child: Column(
                               children: [
-                                IconButton(
-                                  onPressed: () => c.decrement(),
-                                  icon: Icon(
-                                    Icons.remove,
-                                    size: 14,
+                                SizedBox(height: 10),
+                                Container(
+                                  width: 80,
+                                  height: 30,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Color(0xffFFD18D),
                                   ),
-                                ),
-                                Obx(() => Text("${c.total.toString()}")),
-                                IconButton(
-                                  onPressed: () => c.increment(),
-                                  icon: Icon(
-                                    Icons.add,
-                                    size: 14,
+                                  child: TextButton(
+                                    onPressed: () {},
+                                    child: Text(
+                                      "Add",
+                                      style: TextStyle(
+                                        fontFamily: 'NotoSans',
+                                        fontSize: 12,
+                                        color: Colors.black,
+                                      ),
+                                    ),
                                   ),
-                                ),
+                                )
                               ],
                             ),
-                          )
+                          ),
+                          // Container(
+                          //   margin: EdgeInsets.only(right: 10),
+                          //   child: Row(
+                          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          //     children: [
+                          //       IconButton(
+                          //         onPressed: () => c.decrement(),
+                          //         icon: Icon(
+                          //           Icons.remove,
+                          //           size: 14,
+                          //         ),
+                          //       ),
+                          //       Obx(() => Text("${c.total.toString()}")),
+                          //       IconButton(
+                          //         onPressed: () => c.increment(),
+                          //         icon: Icon(
+                          //           Icons.add,
+                          //           size: 14,
+                          //         ),
+                          //       ),
+                          //     ],
+                          //   ),
+                          // ),
                         ],
                       ),
                       Spacer(),
