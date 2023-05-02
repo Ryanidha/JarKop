@@ -143,8 +143,7 @@ class _DashboardState extends State<Dashboard> {
                                           onPressed: () {
                                             Get.to(() => SeachPage());
                                           },
-                                          
-                                          ))),
+                                        ))),
                               ),
                             ],
                           ),
@@ -318,62 +317,6 @@ class _DashboardState extends State<Dashboard> {
                 ],
               ),
               _getWidget()
-
-              // Container(
-              //   padding: EdgeInsets.only(left: 29),
-              //   child: Row(
-              //     children: [
-              //       Container(
-              //         height: 100,
-              //         width: 100,
-              //         decoration: BoxDecoration(color: Colors.grey),
-              //       ),
-              //       Container(
-              //         padding: EdgeInsets.only(left: 11),
-              //         child: Column(
-              //           children: const [
-              //             Text(
-              //               "Cafe A",
-              //               style: TextStyle(
-              //                   fontFamily: 'NotoSans',
-              //                   fontWeight: FontWeight.bold,
-              //                   fontSize: 20),
-              //             )
-              //           ],
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
-              // const SizedBox(
-              //   height: 20,
-              // ),
-              // Container(
-              //   padding: EdgeInsets.only(left: 29),
-              //   child: Row(
-              //     children: [
-              //       Container(
-              //         height: 100,
-              //         width: 100,
-              //         decoration: BoxDecoration(color: Colors.grey),
-              //       ),
-              //       Container(
-              //         padding: EdgeInsets.only(left: 11),
-              //         child: Column(
-              //           children: const [
-              //             Text(
-              //               "Cafe B",
-              //               style: TextStyle(
-              //                   fontFamily: 'NotoSans',
-              //                   fontWeight: FontWeight.bold,
-              //                   fontSize: 20),
-              //             )
-              //           ],
-              //         ),
-              //       )
-              //     ],
-              //   ),
-              // ),
             ],
           ),
         )
@@ -400,62 +343,61 @@ class _DashboardState extends State<Dashboard> {
         if (snapshot.data!.docs.length == 0) {
           return Text('No Data');
         }
-        return ListView(
-          shrinkWrap: true,
-          primary: false,
-          children: snapshot.data!.docs.map((DocumentSnapshot document) {
-            Map<String, dynamic> data =
-                document.data()! as Map<String, dynamic>;
-            return Column(
-              children: [
-                SizedBox(height: 13),
-                Container(
-                    padding: EdgeInsets.only(left: 20),
-                    child: Row(
-                      children: [
-                        Container(
-                          height: 100,
-                          width: 100,
-                          margin: EdgeInsets.only(top: 15),
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(10),
-                            // image: DecorationImage(
-                            //   image: NetworkImage(data['image']),
-                            //   fit: BoxFit.cover,
-                            // ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.only(left: 11),
-                          child: Column(
+              return ListView(
+                shrinkWrap: true,
+                primary: false,
+                children: snapshot.data!.docs.map((DocumentSnapshot document) {
+                  Map<String, dynamic> data =
+                      document.data()! as Map<String, dynamic>;
+                  return Column(
+                    children: [
+                      SizedBox(height: 13),
+                      Container(
+                          padding: EdgeInsets.only(left: 20),
+                          child: Row(
                             children: [
-                              TextButton(
-                                // }),
-                                child: Text(
-                                  data['shopname'],
-                                  style: TextStyle(
-                                      fontSize: 20,
-                                      fontWeight: FontWeight.bold,
-                                      fontFamily: 'NotoSans',
-                                      color: Colors.black),
+                              Container(
+                                height: 100,
+                                width: 100,
+                                margin: EdgeInsets.only(top: 15),
+                                decoration: BoxDecoration(
+                                  color: Colors.grey[300],
+                                  borderRadius: BorderRadius.circular(10),
+                                  // image: DecorationImage(
+                                  //   image: NetworkImage(data['image']),
+                                  //   fit: BoxFit.cover,
+                                  // ),
                                 ),
-                                onPressed: () {
-                                  Get.to(() => MerchantDetail(
-                                        Merchdata: data['shopname'],
-                                      ));
-                                },
                               ),
+                              Container(
+                                padding: EdgeInsets.only(left: 11),
+                                child: Column(
+                                  children: [
+                                    TextButton(
+                                      // }),
+                                      child: Text(
+                                        data['shopname'],
+                                        style: TextStyle(
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.bold,
+                                            fontFamily: 'NotoSans',
+                                            color: Colors.black),
+                                      ),
+                                      onPressed: () {
+                                        Get.to(() => MerchantDetail(
+                                              Merchdata: data['shopname'],
+                                            ));
+                                      },
+                                    ),
+                                  ],
+                                ),
+                              )
                             ],
-                          ),
-                        )
-                      ],
-                    ))
-              ],
-            );
-          }).toList(),
-        );
-      },
-    );
+                          ))
+                    ],
+                  );
+                }).toList(),
+              );
+            });
   }
 }

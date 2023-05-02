@@ -5,6 +5,8 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_customer_app/pages/merchant/merchantDetail.dart';
 
+import '../OrderPage/order.dart';
+
 class ListPage extends StatefulWidget {
   const ListPage({super.key});
 
@@ -38,7 +40,9 @@ class _ListPageState extends State<ListPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Get.to(() => CartView());
+        },
         child: Icon(
           Icons.shopping_cart_outlined,
           color: Colors.black,
