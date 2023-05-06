@@ -16,7 +16,7 @@ class AddUserController extends GetxController {
     CollectionReference users = _firestore.collection('users');
     final user = FirebaseAuth.instance.currentUser;
     final email = user!.email;
-    final type = 'user';
+    const type = 'user';
 
     try {
       await users.add({

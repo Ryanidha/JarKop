@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_customer_app/modules/controller/cart_model_contoller.dart';
 import 'package:jarkop_customer_app/modules/controller/itemCount_controller.dart';
 
 class MerchantDetail extends StatefulWidget {
@@ -254,7 +255,10 @@ class _MerchantDetailState extends State<MerchantDetail> {
                                     color: Color(0xffFFD18D),
                                   ),
                                   child: TextButton(
-                                    onPressed: () {},
+                                    onPressed: () {
+                                      CartItem.addToCart(
+                                          data['name'], data['price']);
+                                    },
                                     child: Text(
                                       "Add",
                                       style: TextStyle(

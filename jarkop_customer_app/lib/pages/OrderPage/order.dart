@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_customer_app/widgets/orderlist.dart';
 
 class CartView extends StatelessWidget {
   const CartView({super.key});
@@ -25,18 +26,9 @@ class CartView extends StatelessWidget {
         ),
         body: SingleChildScrollView(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            // crossAxisAlignment: CrossAxisAlignment.center,
             mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                width: 343,
-                height: 76.8,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              )
-            ],
+            children: [orderList()],
           ),
         ));
   }
