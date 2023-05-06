@@ -184,7 +184,7 @@ class EditMenu extends GetView<AddProductController> {
                         onPressed: () {
                           controller.addProduct(
                             controller.nameC.text,
-                            controller.priceC.text,
+                            controller.priceC as int,
                             controller.descriptionC.text,
                             controller.typesC.text,
                             imageUrl,

@@ -40,7 +40,8 @@ class AddMenu extends GetView<AddProductController> {
       Reference referenceDirImages = referenceRoot.child('images');
 
       //Create a reference for the image to be stored
-      Reference referenceImageToUpload = referenceDirImages.child('name');
+      Reference referenceImageToUpload =
+          referenceDirImages.child(pickedImage.path);
 
       //Handle errors/success
       try {
@@ -184,7 +185,7 @@ class AddMenu extends GetView<AddProductController> {
                         onPressed: () {
                           controller.addProduct(
                             controller.nameC.text,
-                            controller.priceC.text,
+                            controller.priceC as int,
                             controller.descriptionC.text,
                             controller.typesC.text,
                             imageUrl,
@@ -256,16 +257,23 @@ class AddMenu extends GetView<AddProductController> {
     return Center(
       child: Stack(
         children: <Widget>[
-          Container(
-              height: 274,
-              width: 344,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.grey,
-                // image: DecorationImage(
-                //   image: ,
-                //   fit: BoxFit.cover)
-              )),
+          (imageUrl != null)
+                              ? Container(
+                                  height: 274,
+                                  width: 344,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(10),
+                                      image: DecorationImage(
+                                          image: NetworkImage(
+                                              imageUrl),
+                                          fit: BoxFit.cover)))
+                              : Container(
+                                  height: 274,
+                                  width: 344,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(10),
+                                    color: Colors.grey,
+                                  )),
           Positioned(
             bottom: 20.0,
             right: 20.0,
