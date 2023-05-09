@@ -6,7 +6,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 
 class CartItem {
-  static Future<void> addToCart(String name, String price) async {
+  static Future<void> addToCart(String name, int price) async {
      final user = FirebaseAuth.instance.currentUser;
     final email = user!.email;
     try {

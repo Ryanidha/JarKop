@@ -6,10 +6,12 @@ import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 
 import '../modules/controller/itemCount_controller.dart';
+import '../utils/cart_sum.dart';
 
 class orderList extends StatelessWidget {
   orderList({super.key});
   final c = Get.put(CartController());
+ 
   @override
   Widget build(BuildContext context) {
     final sw = MediaQuery.of(context).size.width;
@@ -92,7 +94,7 @@ class orderList extends StatelessWidget {
                               ),
                             ),
                             Text(
-                              data['price'],
+                              "${data['price']}",
                               style: TextStyle(
                                 fontFamily: 'NotoSans',
                                 fontSize: 15,

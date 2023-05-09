@@ -235,7 +235,7 @@ class _MerchantDetailState extends State<MerchantDetail> {
                           ),
                           SizedBox(height: 20),
                           Text(
-                            data['price'],
+                            "${data['price']}",
                             style: TextStyle(
                               fontFamily: 'NotoSans',
                               fontSize: 15,
