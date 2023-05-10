@@ -12,6 +12,6 @@ class CartSum {
       int itemQuantity = doc['quantity'];
       totalPrice += itemPrice * itemQuantity;
     });
-    return CartSum(totalPrice: totalPrice);
+     return CartSum(totalPrice: totalPrice);
   }
 }

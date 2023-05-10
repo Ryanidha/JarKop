@@ -10,7 +10,7 @@ import '../utils/cart_sum.dart';
 
 class orderList extends StatelessWidget {
   orderList({super.key});
-  final c = Get.put(CartController());
+  final CartController c = Get.put(CartController());
  
   @override
   Widget build(BuildContext context) {
@@ -72,7 +72,7 @@ class orderList extends StatelessWidget {
                 children: [
                   Container(
                     margin: EdgeInsets.only(top: 10),
-                    width: sw,
+
                     height: 100,
                     decoration: BoxDecoration(
                       color: Colors.white,
