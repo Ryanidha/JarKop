@@ -4,13 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+// import 'package:jarkop_customer_app/modules/controller/cart_contoller.dart';
 
 import '../modules/controller/itemCount_controller.dart';
 import '../utils/cart_sum.dart';
 
 class orderList extends StatelessWidget {
   orderList({super.key});
-  final CartController c = Get.put(CartController());
+  final ItemCartController c = Get.put(ItemCartController());
  
   @override
   Widget build(BuildContext context) {

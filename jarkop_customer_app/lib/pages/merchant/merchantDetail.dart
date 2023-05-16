@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
-import 'package:jarkop_customer_app/modules/controller/cart_model_contoller.dart';
-import 'package:jarkop_customer_app/modules/controller/itemCount_controller.dart';
+import 'package:jarkop_customer_app/modules/controller/cart_contoller.dart';
+// import 'package:jarkop_customer_app/modules/controller/itemCount_controller.dart';
 
 class MerchantDetail extends StatefulWidget {
   final String Merchdata;
@@ -256,7 +256,7 @@ class _MerchantDetailState extends State<MerchantDetail> {
                                   ),
                                   child: TextButton(
                                     onPressed: () {
-                                      CartItem.addToCart(
+                                      CartController.addToCart(
                                           data['name'], data['price']);
                                     },
                                     child: Text(
@@ -272,29 +272,6 @@ class _MerchantDetailState extends State<MerchantDetail> {
                               ],
                             ),
                           ),
-                          // Container(
-                          //   margin: EdgeInsets.only(right: 10),
-                          //   child: Row(
-                          //     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          //     children: [
-                          //       IconButton(
-                          //         onPressed: () => c.decrement(),
-                          //         icon: Icon(
-                          //           Icons.remove,
-                          //           size: 14,
-                          //         ),
-                          //       ),
-                          //       Obx(() => Text("${c.total.toString()}")),
-                          //       IconButton(
-                          //         onPressed: () => c.increment(),
-                          //         icon: Icon(
-                          //           Icons.add,
-                          //           size: 14,
-                          //         ),
-                          //       ),
-                          //     ],
-                          //   ),
-                          // ),
                         ],
                       ),
                       Spacer(),

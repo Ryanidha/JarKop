@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CartController extends GetxController {
+class ItemCartController extends GetxController {
   var total = 0.obs;
 
   increment() {

@@ -24,8 +24,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       // home: SplashScreen(),
-      home: CartView(),
-      // home: Navipage(),
+      // home: CartView(),
+      home: Navipage(),
     );
   }
 }

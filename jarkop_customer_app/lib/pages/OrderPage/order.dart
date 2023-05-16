@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:jarkop_customer_app/modules/controller/itemCount_controller.dart';
+import 'package:jarkop_customer_app/modules/controller/order_controller.dart';
 import 'package:jarkop_customer_app/widgets/orderlist.dart';
 import 'package:jarkop_customer_app/widgets/payment_card.dart';
 
 class CartView extends StatelessWidget {
-  const CartView({super.key});
+  final OrderController orderController = Get.put(OrderController());
+  final ItemCartController Itemcart = Get.put(ItemCartController());
+  CartView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -132,9 +136,11 @@ class CartView extends StatelessWidget {
                 )
               ]),
             ),
-            Container(
+            TextButton(onPressed: (){
+              orderController.placeOrder(20000,Itemcart.total.value,);
+            }, child: Container(
               width: 340.57,
-              height: 40.11,
+              height: 30,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
@@ -148,7 +154,8 @@ class CartView extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               )),
-            )
+            ) )
+           
           ],
         ),
       ),
