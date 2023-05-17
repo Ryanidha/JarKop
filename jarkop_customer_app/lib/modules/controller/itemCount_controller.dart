@@ -5,23 +5,22 @@ import 'package:get/get.dart';
 class ItemCartController extends GetxController {
   var total = 0.obs;
 
-  increment() {
+  void increment() {
     total.value++;
   }
 
-  decrement() {
+  void decrement() {
     if (total.value <= 0) {
       Get.snackbar(
         "Buying",
-        "Can not be less than 0",
+        "Cannot be less than 0",
         icon: Icon(Icons.alarm),
         barBlur: 20,
         isDismissible: true,
         duration: Duration(seconds: 3),
       );
-    }else{
+    } else {
       total.value--;
     }
-    // total.value--;
   }
 }

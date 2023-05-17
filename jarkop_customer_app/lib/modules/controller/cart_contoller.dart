@@ -59,7 +59,7 @@ class CartController extends GetxController {
         .map((snapshot) =>
             snapshot.docs.map((doc) => CartModel.fromFirestore(doc)).toList());
   }
-   static Future<void> addToCart(String name, int price) async {
+   static Future<void> addToCart(String name, int price, String shop) async {
      final user = FirebaseAuth.instance.currentUser;
     final email = user!.email;
     try {
@@ -67,6 +67,7 @@ class CartController extends GetxController {
         'user': email,
         'name': name,
         'price': price,
+        'toko': shop
       });
       print('Item added to cart!');
     } catch (e) {

@@ -77,7 +77,7 @@ class CartView extends StatelessWidget {
                 ],
               ),
             ),
-            orderList(),
+            OrderList(),
             SizedBox(
               height: 10,
             ),

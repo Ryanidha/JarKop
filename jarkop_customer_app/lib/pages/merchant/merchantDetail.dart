@@ -257,7 +257,7 @@ class _MerchantDetailState extends State<MerchantDetail> {
                                   child: TextButton(
                                     onPressed: () {
                                       CartController.addToCart(
-                                          data['name'], data['price']);
+                                          data['name'], data['price'],shopdata);
                                     },
                                     child: Text(
                                       "Add",

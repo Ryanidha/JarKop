@@ -46,6 +46,7 @@ class AddUserView extends GetView<AddUserController> {
                     borderRadius: BorderRadius.circular(10)),
                 child: TextFormField(
                   controller: controller.birthdateC,
+                  keyboardType: TextInputType.number,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       labelStyle: TextStyle(color: Colors.grey),
@@ -63,6 +64,7 @@ class AddUserView extends GetView<AddUserController> {
                         borderRadius: BorderRadius.circular(10)),
                     child: TextFormField(
                       controller: controller.phonenumberC,
+                      keyboardType: TextInputType.number,
                       decoration: new InputDecoration(
                           border: InputBorder.none,
                           labelStyle: TextStyle(color: Colors.grey),
