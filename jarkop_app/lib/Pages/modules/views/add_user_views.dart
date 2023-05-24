@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import '../controllers/add_user_controller.dart';
+import '../../../controllers/add_user_controller.dart';
 
 
 

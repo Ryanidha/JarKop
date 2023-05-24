@@ -12,7 +12,7 @@ class AddProductController extends GetxController {
   late TextEditingController descriptionC;
   late TextEditingController typesC;
 
-  void addProduct(String name, int price, String description, String types,
+  void addProduct(String name, String price, String description, String types,
       String url) async {
     CollectionReference products = _firestore.collection('products');
     final user = FirebaseAuth.instance.currentUser;

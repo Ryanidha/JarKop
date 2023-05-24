@@ -16,11 +16,11 @@ class CartView extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffF5ECE3),
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.black, //change your color here
         ),
         backgroundColor: Color(0xffFFD18D),
-        title: Text(
+        title: const Text(
           'Cart',
           style: TextStyle(
             fontFamily: 'NotoSans',
@@ -48,7 +48,7 @@ class CartView extends StatelessWidget {
                       margin: EdgeInsets.only(left: 20, right: 20),
                       width: 48.39,
                       height: 48.39,
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.grey,
                         shape: BoxShape.circle,
                       )),

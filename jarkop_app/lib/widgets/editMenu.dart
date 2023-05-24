@@ -2,9 +2,9 @@ import 'dart:io';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:jarkop_app/Pages/modules/controllers/add_product_controller.dart';
+import 'package:jarkop_app/controllers/add_product_controller.dart';
 import 'package:image_picker/image_picker.dart';
-import '../Pages/modules/controllers/switch.dart';
+import '../controllers/switch.dart';
 // import '../Pages/modules/controllers/imageController.dart';
 
 class EditMenu extends GetView<AddProductController> {
@@ -184,7 +184,7 @@ class EditMenu extends GetView<AddProductController> {
                         onPressed: () {
                           controller.addProduct(
                             controller.nameC.text,
-                            controller.priceC as int,
+                            controller.priceC.text,
                             controller.descriptionC.text,
                             controller.typesC.text,
                             imageUrl,

@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:get/get.dart';
+import 'package:jarkop_app/controllers/orders_controller.dart';
 
-class Dashboard extends StatefulWidget {
-  const Dashboard({super.key});
-
-  @override
-  State<Dashboard> createState() => _DashboardState();
-}
-
-class _DashboardState extends State<Dashboard> {
+class Dashboard extends StatelessWidget {
+Dashboard({super.key});
+ final OrdersController ordersController = Get.put(OrdersController());
   @override
   Widget build(BuildContext context) {
-    // final sw = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: Color(0xffF5ECE3),
         body: ListView(

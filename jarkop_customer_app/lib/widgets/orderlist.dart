@@ -47,7 +47,7 @@ class OrderList extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Container(
-                child: Text(
+                child: const Text(
                   'NO DATA',
                   style: TextStyle(
                     fontFamily: 'NotoSans',
@@ -80,14 +80,14 @@ class OrderList extends StatelessWidget {
                   ),
                   child: Row(
                     children: [
-                      SizedBox(width: 30),
+                      const SizedBox(width: 30),
                       Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
                             data['name'],
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'NotoSans',
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -95,7 +95,7 @@ class OrderList extends StatelessWidget {
                           ),
                           Text(
                             "${data['price']}",
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontFamily: 'NotoSans',
                               fontSize: 15,
                               fontWeight: FontWeight.bold,
@@ -108,7 +108,7 @@ class OrderList extends StatelessWidget {
                               children: [
                                 IconButton(
                                   onPressed: () => c.decrement(),
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.remove,
                                     size: 14,
                                   ),
@@ -116,7 +116,7 @@ class OrderList extends StatelessWidget {
                                 Obx(() => Text("${c.total.toString()}")),
                                 IconButton(
                                   onPressed: () => c.increment(),
-                                  icon: Icon(
+                                  icon: const Icon(
                                     Icons.add,
                                     size: 14,
                                   ),

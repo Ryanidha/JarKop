@@ -2,9 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 class CartModel {
   String user;
-  // String category;
   String nama;
-
   int price;
 
   final FirebaseFirestore firestore = FirebaseFirestore.instance;
