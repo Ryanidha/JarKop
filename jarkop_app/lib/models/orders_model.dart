@@ -3,7 +3,6 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 class OrdersModel {
   String user;
   List orders;
-  
   int totals;
   int qty;
   final FirebaseFirestore firestore = FirebaseFirestore.instance;

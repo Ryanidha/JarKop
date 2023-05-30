@@ -45,29 +45,29 @@ Dashboard({super.key});
             const SizedBox(
               height: 23,
             ),
-            Container(
-              height: 60,
-              padding: EdgeInsets.only(left: 70),
-              decoration: const BoxDecoration(
-                color: Colors.red,
-              ),
-              child: Row(
-                children: const [
-                  Icon(
-                    Icons.warning,
-                    color: Colors.white,
-                  ),
-                  Text(
-                    "You Have 2 Orders Left",
-                    style: TextStyle(
-                        fontFamily: 'NotoSans',
-                        fontSize: 20,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.white),
-                  ),
-                ],
-              ),
-            ),
+            // Container(
+            //   height: 60,
+            //   padding: EdgeInsets.only(left: 70),
+            //   decoration: const BoxDecoration(
+            //     color: Colors.red,
+            //   ),
+            //   child: const Row(
+            //     children: [
+            //       Icon(
+            //         Icons.warning,
+            //         color: Colors.white,
+            //       ),
+            //       Text(
+            //         "You Have 2 Orders Left",
+            //         style: TextStyle(
+            //             fontFamily: 'NotoSans',
+            //             fontSize: 20,
+            //             fontWeight: FontWeight.bold,
+            //             color: Colors.white),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Container(
               height: 150,
               color: Colors.white,
@@ -112,15 +112,15 @@ Dashboard({super.key});
                 ],
               ),
             ),
-            SizedBox(height: 10,),
+            const SizedBox(height: 10,),
             Container(
               height: 60,
-              padding: EdgeInsets.only(left: 70),
+              padding: const EdgeInsets.only(left: 70),
               decoration: const BoxDecoration(
                 color: Colors.green,
               ),
-              child: Row(
-                children: const [
+              child: const Row(
+                children: [
                   Icon(
                     Icons.warning,
                     color: Colors.white,
@@ -142,7 +142,7 @@ Dashboard({super.key});
               child: ListView(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(top: 19, left: 20),
+                    padding: const EdgeInsets.only(top: 19, left: 20),
                     child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
@@ -152,7 +152,7 @@ Dashboard({super.key});
                     ),
                   ),
                   Container(
-                    padding: EdgeInsets.only(top: 19, left: 20),
+                    padding: const EdgeInsets.only(top: 19, left: 20),
                     child: const Text(
                       "1x Cappucino",
                       style: TextStyle(
@@ -164,10 +164,10 @@ Dashboard({super.key});
                   SizedBox(height: 20),
                   Container(
                     height: 54,
-                    color: Color(0xffFFD18D),
+                    color: const Color(0xffFFD18D),
                     child: TextButton(
                       onPressed: (() {}),
-                      child: Text(
+                      child: const Text(
                         "Confirm Delivery",
                         style: TextStyle(
                             fontFamily: 'NotoSans',

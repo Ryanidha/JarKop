@@ -30,9 +30,8 @@ class OrderController extends GetxController {
     try {
       isLoading(true);
       update();
-      final String user = FirebaseAuth.instance.currentUser!.uid;
       final response =
-          await _db.collection('orders').where('orders', isEqualTo: user).get();
+          await _db.collection('orders').get();
       final List<OrderModel> loadedOrders = [];
       response.docs.forEach((order) {
         loadedOrders.add(OrderModel.fromFirestore(order));
@@ -50,7 +49,6 @@ class OrderController extends GetxController {
     final String user = FirebaseAuth.instance.currentUser!.uid;
     return _db
         .collection('orders')
-        .where('user', isEqualTo: user)
         .snapshots()
         .map((snapshot) =>
             snapshot.docs.map((doc) => OrderModel.fromFirestore(doc)).toList());

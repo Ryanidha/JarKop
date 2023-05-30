@@ -62,9 +62,9 @@ class AddMenu extends GetView<AddProductController> {
     final sw = MediaQuery.of(context).size.width;
     Get.put(AddProductController());
     return Scaffold(
-        backgroundColor: Color(0xffF5ECE3),
+        backgroundColor: const Color(0xffF5ECE3),
         appBar: AppBar(
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.black, //change your color here
           ),
           backgroundColor: Colors.white,
@@ -81,9 +81,9 @@ class AddMenu extends GetView<AddProductController> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               productImage(context),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 width: 344,
                 padding: const EdgeInsets.only(left: 10),
@@ -98,7 +98,7 @@ class AddMenu extends GetView<AddProductController> {
                       labelText: "Nama"),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 width: 344,
                 padding: const EdgeInsets.only(left: 10),
@@ -113,7 +113,7 @@ class AddMenu extends GetView<AddProductController> {
                       labelText: "Category (Kopi/Snack/Makanan)"),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 height: 80,
                 width: 344,
@@ -129,7 +129,7 @@ class AddMenu extends GetView<AddProductController> {
                       labelText: "Description"),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 width: 344,
                 padding: const EdgeInsets.only(left: 10),
@@ -144,14 +144,14 @@ class AddMenu extends GetView<AddProductController> {
                       labelText: "Price"),
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Container(
-                      padding: EdgeInsets.only(left: 30),
-                      child: Text(
+                      padding: const EdgeInsets.only(left: 30),
+                      child: const Text(
                         "Available",
                         style: TextStyle(
                             fontSize: 16,
@@ -160,17 +160,17 @@ class AddMenu extends GetView<AddProductController> {
                             fontFamily: 'NotoSans'),
                       ),
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Container(
-                      padding: EdgeInsets.only(right: 30),
+                      padding: const EdgeInsets.only(right: 30),
                       child: MySwitch(initialValue: isSwitched),
                     ),
                   ],
                 ),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Container(
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -204,7 +204,7 @@ class AddMenu extends GetView<AddProductController> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 8,
               )
             ],
@@ -216,24 +216,24 @@ class AddMenu extends GetView<AddProductController> {
     return Container(
       height: 100,
       width: MediaQuery.of(context).size.width,
-      margin: EdgeInsets.symmetric(
+      margin: const EdgeInsets.symmetric(
         horizontal: 20,
         vertical: 20,
       ),
       child: Column(
         children: <Widget>[
-          Text(
+          const Text(
             "Choose Photo",
             style: TextStyle(fontFamily: 'NotoSans'),
           ),
-          SizedBox(
+          const SizedBox(
             height: 20,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               IconButton(
-                icon: Icon(Icons.camera),
+                icon: const Icon(Icons.camera),
                 onPressed: () {
                   uploadImage(ImageSource.camera);
                 },
@@ -283,7 +283,7 @@ class AddMenu extends GetView<AddProductController> {
                     context: context,
                     builder: ((builder) => bottomSheet(context)));
               },
-              child: Icon(
+              child: const Icon(
                 Icons.camera_alt,
                 color: Colors.white,
                 size: 28.0,
