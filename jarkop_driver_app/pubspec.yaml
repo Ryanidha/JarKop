@@ -37,6 +37,8 @@ dependencies:
     sdk: flutter
   flutter_switch: ^0.3.2
   get: ^4.6.5
+  google_maps: ^6.3.0
+  google_maps_flutter: ^2.2.8
   image_picker: ^0.8.6+4
   scroll_bottom_navigation_bar: ^4.0.0
 
