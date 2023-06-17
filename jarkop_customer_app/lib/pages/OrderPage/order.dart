@@ -112,19 +112,13 @@ class CartView extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "Wallet",
+                        "Cash",
                         style: TextStyle(
+                          fontWeight: FontWeight.bold,
                           fontFamily: 'NotoSans',
-                          fontSize: 12,
+                          fontSize: 14,
                         ),
                       ),
-                      Text(
-                        "200.000",
-                        style: TextStyle(
-                            fontFamily: 'NotoSans',
-                            fontSize: 12,
-                            fontWeight: FontWeight.bold),
-                      )
                     ],
                   ),
                 ),
@@ -136,26 +130,31 @@ class CartView extends StatelessWidget {
                 )
               ]),
             ),
-            TextButton(onPressed: (){
-              orderController.placeOrder(20000,Itemcart.total.value,);
-            }, child: Container(
-              width: 340.57,
-              height: 30,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Center(
-                  child: Text(
-                "Place Delivery Order",
-                style: TextStyle(
-                  fontFamily: 'NotoSans',
-                  fontSize: 15,
-                  fontWeight: FontWeight.bold,
-                ),
-              )),
-            ) )
-           
+            TextButton(
+                onPressed: () {
+                  orderController.placeOrder(
+                    20000,
+                    Itemcart.total.value,
+                  );
+                },
+                child: Container(
+                  width: 340.57,
+                  height: 30,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Center(
+                      child: Text(
+                    "Place Delivery Order",
+                    style: TextStyle(
+                      fontFamily: 'NotoSans',
+                      fontSize: 15,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )),
+                ))
           ],
         ),
       ),

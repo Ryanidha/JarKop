@@ -53,13 +53,7 @@ class OrderController extends GetxController {
         .map((snapshot) =>
             snapshot.docs.map((doc) => OrderModel.fromFirestore(doc)).toList());
   }
-
   
-  //sum total price from cart
-
-
-  //set change money
-
   @override
   void onClose() {
     super.onClose();

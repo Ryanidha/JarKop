@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter_switch/flutter_switch.dart';
 import 'package:get/get.dart';
 import 'package:jarkop_driver_app/home/order.dart';
 
@@ -246,7 +243,7 @@ class _DashboardState extends State<Dashboard> {
                           color: Color(0xffFFD18D),
                           child: TextButton(
                               onPressed: (() {
-                                // Get..to(()=>OrderPage());
+                                Get.to(()=>OrderPage());
                               }),
                               child: const Text(
                                 "Accept Order",

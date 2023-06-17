@@ -35,7 +35,7 @@ class Dashboard extends StatelessWidget {
                       color: Colors.black),
                 ),
                 subtitle: Text(
-                  "Rp 1.000.000",
+                  "0",
                   style: TextStyle(
                       fontFamily: 'NotoSans',
                       fontSize: 18,
@@ -47,127 +47,127 @@ class Dashboard extends StatelessWidget {
             const SizedBox(
               height: 23,
             ),
-            // Container(
-            //   height: 60,
-            //   padding: EdgeInsets.only(left: 70),
-            //   decoration: const BoxDecoration(
-            //     color: Colors.red,
-            //   ),
-            //   child: const Row(
-            //     children: [
-            //       Icon(
-            //         Icons.warning,
-            //         color: Colors.white,
-            //       ),
-            //       Text(
-            //         "You Have 2 Orders Left",
-            //         style: TextStyle(
-            //             fontFamily: 'NotoSans',
-            //             fontSize: 20,
-            //             fontWeight: FontWeight.bold,
-            //             color: Colors.white),
-            //       ),
-            //     ],
-            //   ),
-            // ),
-            Expanded(
-                child:  GetBuilder<OrderController>(
-                      builder: (controller) {
-                        if (controller.isLoading.value) {
-                          return const Center(
-                            child: CircularProgressIndicator(),
-                          );
-                        }
-                        return ListView.builder(
-                          physics: const NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: controller.orderList[0].orders.length,
-                          itemBuilder: (context, index) {
-                            if (controller.orderList.isEmpty) {
-                              return const Center(
-                                child: Text('Tidak ada kategori'),
-                              );
-                            }
-                            var order = controller.orderList[0];
-                            return Expanded(
-                              child: ClipRRect(
-                                borderRadius: BorderRadius.circular(12),
-                                child: Container(
-                                  margin: EdgeInsets.only(bottom: 20),
-                                  color: Color(0xffD5FFF5),
-                                  width: MediaQuery.of(context).size.width,
-                                  child: Padding(
-                                    padding: const EdgeInsets.all(20.0),
-                                    child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            height: 16,
-                                          ),
-                                          Text(
-                                            order.orders[index]['name'],
-                                            style: TextStyle(
-                                                fontFamily: 'NotoSans',
-                                                fontSize: 18,
-                                                fontWeight: FontWeight.bold,
-                                                color: Colors.black),
-                                          )
-                                        ]),
-                                  ),
-                                ),
-                              ),
-                            );
-                          },
-                        );
-                      },
-                    )),
-            // Container(
-            //   height: 150,
-            //   color: Colors.white,
-            //   child: ListView(
-            //     children: [
-            //       Container(
-            //         padding: EdgeInsets.only(top: 19, left: 20),
-            //         child: const Text(
-            //           "1x Cappucino",
-            //           style: TextStyle(
-            //               fontFamily: 'NotoSans',
-            //               fontSize: 18,
-            //               color: Colors.black),
-            //         ),
-            //       ),
-            //       Container(
-            //         padding: EdgeInsets.only(top: 19, left: 20),
-            //         child: const Text(
-            //           "1x Cappucino",
-            //           style: TextStyle(
-            //               fontFamily: 'NotoSans',
-            //               fontSize: 18,
-            //               color: Colors.black),
-            //         ),
-            //       ),
-            //       SizedBox(height: 20),
-            //       Container(
-            //         height: 54,
-            //         color: Color(0xffFFD18D),
-            //         child: TextButton(
-            //           onPressed: (() {}),
-            //           child: const Text(
-            //             "Confirm Delivery",
-            //             style: TextStyle(
-            //                 fontFamily: 'NotoSans',
-            //                 fontSize: 18,
-            //                 color: Colors.black,
-            //                 fontWeight: FontWeight.bold),
-            //           ),
-            //         ),
-            //       )
-            //     ],
-            //   ),
-            // ),
+            Container(
+              height: 60,
+              padding: EdgeInsets.only(left: 70),
+              decoration: const BoxDecoration(
+                color: Colors.red,
+              ),
+              child: const Row(
+                children: [
+                  Icon(
+                    Icons.warning,
+                    color: Colors.white,
+                  ),
+                  Text(
+                    "You Have 1 Orders Left",
+                    style: TextStyle(
+                        fontFamily: 'NotoSans',
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white),
+                  ),
+                ],
+              ),
+            ),
+            // Expanded(
+            //     child:  GetBuilder<OrderController>(
+            //           builder: (controller) {
+            //             if (controller.isLoading.value) {
+            //               return const Center(
+            //                 child: CircularProgressIndicator(),
+            //               );
+            //             }
+            //             return ListView.builder(
+            //               physics: const NeverScrollableScrollPhysics(),
+            //               shrinkWrap: true,
+            //               itemCount: controller.orderList.length,
+            //               itemBuilder: (context, index) {
+            //                 if (controller.orderList.isEmpty) {
+            //                   return const Center(
+            //                     child: Text('Tidak ada kategori'),
+            //                   );
+            //                 }
+            //                 var order = controller.orderList[0];
+            //                 return Expanded(
+            //                   child: ClipRRect(
+            //                     borderRadius: BorderRadius.circular(12),
+            //                     child: Container(
+            //                       margin: EdgeInsets.only(bottom: 20),
+            //                       color: Color(0xffD5FFF5),
+            //                       width: MediaQuery.of(context).size.width,
+            //                       child: Padding(
+            //                         padding: const EdgeInsets.all(20.0),
+            //                         child: Column(
+            //                             crossAxisAlignment:
+            //                                 CrossAxisAlignment.start,
+            //                             mainAxisAlignment:
+            //                                 MainAxisAlignment.start,
+            //                             children: [
+            //                               SizedBox(
+            //                                 height: 16,
+            //                               ),
+            //                               Text(
+            //                                 order.orders[index]['name'],
+            //                                 style: TextStyle(
+            //                                     fontFamily: 'NotoSans',
+            //                                     fontSize: 18,
+            //                                     fontWeight: FontWeight.bold,
+            //                                     color: Colors.black),
+            //                               )
+            //                             ]),
+            //                       ),
+            //                     ),
+            //                   ),
+            //                 );
+            //               },
+            //             );
+            //           },
+            //         )),
+            Container(
+              height: 150,
+              color: Colors.white,
+              child: ListView(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(top: 19, left: 20),
+                    child: const Text(
+                      "1x Expresso",
+                      style: TextStyle(
+                          fontFamily: 'NotoSans',
+                          fontSize: 18,
+                          color: Colors.black),
+                    ),
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(top: 19, left: 20),
+                    child: const Text(
+                      "1x Bakwan",
+                      style: TextStyle(
+                          fontFamily: 'NotoSans',
+                          fontSize: 18,
+                          color: Colors.black),
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  Container(
+                    height: 54,
+                    color: Color(0xffFFD18D),
+                    child: TextButton(
+                      onPressed: (() {}),
+                      child: const Text(
+                        "Confirm Delivery",
+                        style: TextStyle(
+                            fontFamily: 'NotoSans',
+                            fontSize: 18,
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  )
+                ],
+              ),
+            ),
             // const SizedBox(
             //   height: 10,
             // ),
